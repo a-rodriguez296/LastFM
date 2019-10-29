@@ -21,5 +21,15 @@ struct Constants {
             static let albumKey = "album"
         }
         
+        struct Artist {
+            static let methodValue = "artist.search"
+            static let artistKey = "artist"
+        }
+        
+        struct Track {
+            static let methodValue = "track.search"
+            static let trackKey = "track"
+        }
+        
     }
 }

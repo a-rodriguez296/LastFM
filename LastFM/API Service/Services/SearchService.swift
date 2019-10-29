@@ -11,6 +11,8 @@ import Alamofire
 
 enum SearchService: Service {
     case album(String)
+    case artist(String)
+    case track(String)
     
 }
 
@@ -20,14 +22,14 @@ extension SearchService: URLRequestConvertible {
     
     var method: HTTPMethod {
         switch self {
-        case .album:
+        case .album, .artist, .track:
             return .get
         }
     }
     
     var path: String {
         switch self {
-        case .album:
+        case .album, .artist, .track:
             return ""
         }
     }
@@ -38,6 +40,14 @@ extension SearchService: URLRequestConvertible {
             return [Constants.SearchService.methodKey: Constants.SearchService.Album.methodValue,
                     Constants.SearchService.formatKey: Constants.SearchService.formatValue,
                     Constants.SearchService.Album.albumKey: keyword]
+        case .artist(let keyword):
+            return [Constants.SearchService.methodKey: Constants.SearchService.Artist.methodValue,
+                    Constants.SearchService.formatKey: Constants.SearchService.formatValue,
+                    Constants.SearchService.Artist.artistKey: keyword]
+        case .track(let keyword):
+            return [Constants.SearchService.methodKey: Constants.SearchService.Track.methodValue,
+                    Constants.SearchService.formatKey: Constants.SearchService.formatValue,
+                    Constants.SearchService.Track.trackKey: keyword]
         }
     }
     
