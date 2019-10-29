@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		359A14312368D48C002E0C2B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359A14302368D48C002E0C2B /* Constants.swift */; };
 		35DBC1782368C33800FE3D9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DBC1772368C33800FE3D9B /* AppDelegate.swift */; };
 		35DBC17A2368C33800FE3D9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DBC1792368C33800FE3D9B /* ViewController.swift */; };
 		35DBC17D2368C33800FE3D9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35DBC17B2368C33800FE3D9B /* Main.storyboard */; };
@@ -20,10 +21,12 @@
 		35DBC1962368C64400FE3D9B /* AlamofireNetwokrLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DBC18E2368C64300FE3D9B /* AlamofireNetwokrLayer.swift */; };
 		35DBC1972368C64400FE3D9B /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DBC18F2368C64400FE3D9B /* NetworkResponse.swift */; };
 		35DBC1982368C64400FE3D9B /* HttpStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DBC1902368C64400FE3D9B /* HttpStatusCode.swift */; };
+		35DBC19C2368C82600FE3D9B /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DBC19B2368C82600FE3D9B /* SearchService.swift */; };
 		B8219CB04763E90C337A07D0 /* Pods_LastFM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AB509237C3D05DC2F44EF8D /* Pods_LastFM.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		359A14302368D48C002E0C2B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		35DBC1742368C33800FE3D9B /* LastFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LastFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35DBC1772368C33800FE3D9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35DBC1792368C33800FE3D9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +42,7 @@
 		35DBC18E2368C64300FE3D9B /* AlamofireNetwokrLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireNetwokrLayer.swift; sourceTree = "<group>"; };
 		35DBC18F2368C64400FE3D9B /* NetworkResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
 		35DBC1902368C64400FE3D9B /* HttpStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpStatusCode.swift; sourceTree = "<group>"; };
+		35DBC19B2368C82600FE3D9B /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		640BBDEDACB47DDBA7153D78 /* Pods-LastFM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LastFM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LastFM/Pods-LastFM.debug.xcconfig"; sourceTree = "<group>"; };
 		9AB509237C3D05DC2F44EF8D /* Pods_LastFM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LastFM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA2800131985CFB459E7963A /* Pods-LastFM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LastFM.release.xcconfig"; path = "Pods/Target Support Files/Pods-LastFM/Pods-LastFM.release.xcconfig"; sourceTree = "<group>"; };
@@ -84,6 +88,7 @@
 				35DBC1802368C33800FE3D9B /* LaunchScreen.storyboard */,
 				35DBC1992368C65100FE3D9B /* API Service */,
 				35DBC1832368C33800FE3D9B /* Info.plist */,
+				359A14302368D48C002E0C2B /* Constants.swift */,
 			);
 			path = LastFM;
 			sourceTree = "<group>";
@@ -92,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				35DBC19A2368C66100FE3D9B /* Network */,
+				35DBC19D2368C92600FE3D9B /* Services */,
 			);
 			path = "API Service";
 			sourceTree = "<group>";
@@ -109,6 +115,14 @@
 				35DBC18F2368C64400FE3D9B /* NetworkResponse.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		35DBC19D2368C92600FE3D9B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				35DBC19B2368C82600FE3D9B /* SearchService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		DDEDA6D4A398425E321F9461 /* Frameworks */ = {
@@ -259,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35DBC19C2368C82600FE3D9B /* SearchService.swift in Sources */,
 				35DBC1932368C64400FE3D9B /* ErrorParser.swift in Sources */,
 				35DBC1952368C64400FE3D9B /* NetworkError.swift in Sources */,
 				35DBC17A2368C33800FE3D9B /* ViewController.swift in Sources */,
@@ -269,6 +284,7 @@
 				35DBC1962368C64400FE3D9B /* AlamofireNetwokrLayer.swift in Sources */,
 				35DBC1922368C64400FE3D9B /* Configuration.swift in Sources */,
 				35DBC1782368C33800FE3D9B /* AppDelegate.swift in Sources */,
+				359A14312368D48C002E0C2B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

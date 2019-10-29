@@ -11,7 +11,7 @@ import Foundation
 class Configuration {
     
     class func getBaseURL() -> String {
-        return "http://ws.audioscrobbler.com/2.0/"
+        return "http://ws.audioscrobbler.com/2.0"
     }
 }
 
