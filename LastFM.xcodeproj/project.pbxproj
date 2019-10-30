@@ -13,6 +13,8 @@
 		3590BAA22368E39A005E8941 /* AlbumsArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3590BAA12368E39A005E8941 /* AlbumsArray.swift */; };
 		3590BAA42368E5BE005E8941 /* AlbumMatches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3590BAA32368E5BE005E8941 /* AlbumMatches.swift */; };
 		359A14312368D48C002E0C2B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359A14302368D48C002E0C2B /* Constants.swift */; };
+		35A26854236A17C6003575E0 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A26853236A17C6003575E0 /* AsyncOperation.swift */; };
+		35A26857236A18A3003575E0 /* AlbumsSearchOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A26856236A18A3003575E0 /* AlbumsSearchOperation.swift */; };
 		35DBC1782368C33800FE3D9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DBC1772368C33800FE3D9B /* AppDelegate.swift */; };
 		35DBC17A2368C33800FE3D9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DBC1792368C33800FE3D9B /* ViewController.swift */; };
 		35DBC17D2368C33800FE3D9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35DBC17B2368C33800FE3D9B /* Main.storyboard */; };
@@ -44,6 +46,8 @@
 		3590BAA12368E39A005E8941 /* AlbumsArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsArray.swift; sourceTree = "<group>"; };
 		3590BAA32368E5BE005E8941 /* AlbumMatches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumMatches.swift; sourceTree = "<group>"; };
 		359A14302368D48C002E0C2B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		35A26853236A17C6003575E0 /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		35A26856236A18A3003575E0 /* AlbumsSearchOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsSearchOperation.swift; sourceTree = "<group>"; };
 		35DBC1742368C33800FE3D9B /* LastFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LastFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35DBC1772368C33800FE3D9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35DBC1792368C33800FE3D9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +109,15 @@
 			path = "Response Models";
 			sourceTree = "<group>";
 		};
+		35A26855236A183C003575E0 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				35A26853236A17C6003575E0 /* AsyncOperation.swift */,
+				35A26856236A18A3003575E0 /* AlbumsSearchOperation.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
 		35DBC16B2368C33800FE3D9B = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +157,7 @@
 			children = (
 				35DBC19A2368C66100FE3D9B /* Network */,
 				35DBC19D2368C92600FE3D9B /* Services */,
+				35A26855236A183C003575E0 /* Operations */,
 			);
 			path = "API Service";
 			sourceTree = "<group>";
@@ -350,6 +364,7 @@
 				35DBC17A2368C33800FE3D9B /* ViewController.swift in Sources */,
 				35FEE32523692FBC00CB561C /* ArtistsSearchResult.swift in Sources */,
 				35FEE32E236936AC00CB561C /* TrackSearchResults.swift in Sources */,
+				35A26857236A18A3003575E0 /* AlbumsSearchOperation.swift in Sources */,
 				35DBC1912368C64400FE3D9B /* APIService.swift in Sources */,
 				35DBC1982368C64400FE3D9B /* HttpStatusCode.swift in Sources */,
 				35DBC1942368C64400FE3D9B /* AccessTokenAdapter.swift in Sources */,
@@ -359,6 +374,7 @@
 				35FEE32123692E8500CB561C /* ArtistsArray.swift in Sources */,
 				35FEE32A2369355100CB561C /* TracksArray.swift in Sources */,
 				35DBC1922368C64400FE3D9B /* Configuration.swift in Sources */,
+				35A26854236A17C6003575E0 /* AsyncOperation.swift in Sources */,
 				3590BAA22368E39A005E8941 /* AlbumsArray.swift in Sources */,
 				3537768B23692AA0005EC728 /* Artist.swift in Sources */,
 				35DBC1782368C33800FE3D9B /* AppDelegate.swift in Sources */,
