@@ -18,16 +18,24 @@ class TrackSearchOperation: AsyncOperation {
     }
     
     override func main() {
-        AlamofireNetworkLayer.sharedInstance.request(SearchService.track(searchKeyword), onSuccess: {[unowned self] (response) in
-            do {
-                let tracksResponse = try JSONDecoder().decode(TrackSearchResults.self, from: response.body!)
-                self.tracks = tracksResponse.getTracks()
-            } catch {
-                //Error Handling
+        if !isCancelled {
+            AlamofireNetworkLayer.sharedInstance.request(SearchService.track(searchKeyword), onSuccess: {[weak self] (response) in
+                guard let unwrappedSelf = self else { return }
+                
+                do {
+                    if !unwrappedSelf.isCancelled {
+                        let tracksResponse = try JSONDecoder().decode(TrackSearchResults.self, from: response.body!)
+                        unwrappedSelf.tracks = tracksResponse.getTracks()
+                    }
+                    
+                } catch {
+                    //Error Handling
+                }
+                unwrappedSelf.state = .Finished
+            }) {[weak self] error in
+                guard let unwrappedSelf = self else { return }
+                unwrappedSelf.state = .Finished
             }
-            self.state = .Finished
-        }) {[unowned self] error in
-            self.state = .Finished
         }
     }
 }

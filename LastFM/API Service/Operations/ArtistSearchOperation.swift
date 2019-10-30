@@ -18,16 +18,22 @@ class ArtistSearchOperation: AsyncOperation {
     }
     
     override func main() {
-        AlamofireNetworkLayer.sharedInstance.request(SearchService.artist(searchKeyword), onSuccess: {[unowned self] (response) in
-            do {
-                let artistsResponse = try JSONDecoder().decode(ArtistSearchResults.self, from: response.body!)
-                self.artists = artistsResponse.getArtists()
-            } catch {
-                //Error Handling
+        if !isCancelled {
+            AlamofireNetworkLayer.sharedInstance.request(SearchService.artist(searchKeyword), onSuccess: {[weak self] (response) in
+                guard let unwrappedSelf = self else { return }
+                do {
+                    if !unwrappedSelf.isCancelled {
+                        let artistsResponse = try JSONDecoder().decode(ArtistSearchResults.self, from: response.body!)
+                        unwrappedSelf.artists = artistsResponse.getArtists()
+                    }
+                } catch {
+                    //Error Handling
+                }
+                unwrappedSelf.state = .Finished
+            }) {[weak self] error in
+                guard let unwrappedSelf = self else { return }
+                unwrappedSelf.state = .Finished
             }
-            self.state = .Finished
-        }) {[unowned self] error in
-            self.state = .Finished
         }
     }
 }
