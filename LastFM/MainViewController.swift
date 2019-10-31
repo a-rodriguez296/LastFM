@@ -13,11 +13,14 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
+       
+       setupSearchController()
+
         
         ////////////////////////////////////////
         // This code is to be removed. It is just a test for NSOperationsQueue and NS Operation
@@ -51,7 +54,15 @@ class MainViewController: UIViewController {
 //                print("==================")
 //            }
 //        }
-        
+    }
+    
+    func setupSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.autocapitalizationType = .none
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
     }
 }
 
@@ -66,5 +77,11 @@ extension MainViewController: UITableViewDataSource {
         return cell
     }
     
+}
+
+extension MainViewController: UISearchResultsUpdating  {
+    func updateSearchResults(for searchController: UISearchController) {
+        // TO-DO: Implement here
+    }
 }
 
