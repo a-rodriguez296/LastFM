@@ -16,6 +16,9 @@ class MainPresenter: MainPresenterProtocol {
     weak var view: MainViewProtocol?
     var timer: Timer?
     var keyword: String?
+    var artistsArray: [Artist] = [Artist]()
+    var albumsArray: [Album] = [Album]()
+    var tracksArray: [Track] = [Track]()
     
     //This is the time we are going to wait to perform a search
     var seconds: Double
@@ -73,8 +76,15 @@ class MainPresenter: MainPresenterProtocol {
     }
     
     func executeRequest(with keyword: String) {
-        repository.searchArtistsTracksAlbums(with: keyword) { (artistsArray, albumsArray, tracksArray) in
-            print("hola")
+        repository.searchArtistsTracksAlbums(with: keyword) {[weak self] (artistsArray, albumsArray, tracksArray) in
+            guard let unwrappedSelf = self,
+            let unwrappedArtistsArray = artistsArray,
+            let unwrappedAlbumsArray = albumsArray,
+            let unwrappedTracksArray = tracksArray
+            else { return }
+            unwrappedSelf.artistsArray = unwrappedArtistsArray
+            unwrappedSelf.albumsArray = unwrappedAlbumsArray
+            unwrappedSelf.tracksArray = unwrappedTracksArray
         }
     }
 }
