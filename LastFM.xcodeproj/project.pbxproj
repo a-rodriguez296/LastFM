@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		351088E5236BC1BE009B6AAA /* MainContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351088E4236BC1BE009B6AAA /* MainContract.swift */; };
+		351088E7236BC262009B6AAA /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351088E6236BC262009B6AAA /* MainPresenter.swift */; };
 		3537768B23692AA0005EC728 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3537768A23692AA0005EC728 /* Artist.swift */; };
 		355DDD172368EEA7004256D8 /* AlbumsSearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355DDD162368EEA7004256D8 /* AlbumsSearchResults.swift */; };
 		358A6981236A8F5A00289E4B /* ListBackgroundTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 358A6980236A8F5A00289E4B /* ListBackgroundTableView.xib */; };
@@ -43,6 +45,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		351088E4236BC1BE009B6AAA /* MainContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContract.swift; sourceTree = "<group>"; };
+		351088E6236BC262009B6AAA /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		3537768A23692AA0005EC728 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		355DDD162368EEA7004256D8 /* AlbumsSearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsSearchResults.swift; sourceTree = "<group>"; };
 		358A6980236A8F5A00289E4B /* ListBackgroundTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListBackgroundTableView.xib; sourceTree = "<group>"; };
@@ -116,8 +120,10 @@
 		358A697F236A8F3700289E4B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				351088E4236BC1BE009B6AAA /* MainContract.swift */,
 				35DBC1792368C33800FE3D9B /* MainViewController.swift */,
 				358A6980236A8F5A00289E4B /* ListBackgroundTableView.xib */,
+				351088E6236BC262009B6AAA /* MainPresenter.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -403,8 +409,10 @@
 				35FEE32A2369355100CB561C /* TracksArray.swift in Sources */,
 				35DBC1922368C64400FE3D9B /* Configuration.swift in Sources */,
 				35A26854236A17C6003575E0 /* AsyncOperation.swift in Sources */,
+				351088E5236BC1BE009B6AAA /* MainContract.swift in Sources */,
 				3590BAA22368E39A005E8941 /* AlbumsArray.swift in Sources */,
 				3537768B23692AA0005EC728 /* Artist.swift in Sources */,
+				351088E7236BC262009B6AAA /* MainPresenter.swift in Sources */,
 				35DBC1782368C33800FE3D9B /* AppDelegate.swift in Sources */,
 				359A14312368D48C002E0C2B /* Constants.swift in Sources */,
 				35FEE327236934AF00CB561C /* Track.swift in Sources */,

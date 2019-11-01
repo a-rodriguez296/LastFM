@@ -13,7 +13,14 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    // MARK: - Variables
+    var presenter: MainPresenterProtocol?
     var searchController = UISearchController(searchResultsController: nil)
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        presenter = MainPresenter(with: self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,7 +95,11 @@ extension MainViewController: UITableViewDataSource {
 extension MainViewController: UISearchResultsUpdating  {
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else { return }
-        print(text)
+        presenter?.performSearch(with: text)
     }
+}
+
+extension MainViewController: MainViewProtocol {
+    
 }
 
