@@ -9,7 +9,7 @@
 import Foundation
 
 class MainPresenter: MainPresenterProtocol {
-    
+
     let secondsBetweenKeystrokes = 0.8
     let repository: MainRepositoryProtocol
     
@@ -85,6 +85,28 @@ class MainPresenter: MainPresenterProtocol {
             unwrappedSelf.artistsArray = unwrappedArtistsArray
             unwrappedSelf.albumsArray = unwrappedAlbumsArray
             unwrappedSelf.tracksArray = unwrappedTracksArray
+        }
+    }
+    
+    func numberOfRows(per section: MainListSection) -> Int {
+        switch section {
+        case .album:
+            return albumsArray.count
+        case .artist:
+            return artistsArray.count
+        case .track:
+            return tracksArray.count
+        }
+    }
+    
+    func nameOfElement(at section: MainListSection, at row: Int) -> String {
+        switch section {
+        case .album:
+            return albumsArray[row].name
+        case .artist:
+            return artistsArray[row].name
+        case .track:
+            return tracksArray[row].name
         }
     }
 }
