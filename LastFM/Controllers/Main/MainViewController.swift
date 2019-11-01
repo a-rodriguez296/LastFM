@@ -63,17 +63,23 @@ class MainViewController: UIViewController {
         navigationItem.hidesSearchBarWhenScrolling = false
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
+        
+        
+        let backgroundView = Bundle.main.loadNibNamed("ListBackgroundTableView", owner: self, options: nil)?.first as! UIView
+        tableView.backgroundView = backgroundView
+        
     }
 }
 
 extension MainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.backgroundColor = .red
         return cell
     }
     
@@ -81,7 +87,8 @@ extension MainViewController: UITableViewDataSource {
 
 extension MainViewController: UISearchResultsUpdating  {
     func updateSearchResults(for searchController: UISearchController) {
-        // TO-DO: Implement here
+        guard let text = searchController.searchBar.text else { return }
+        print(text)
     }
 }
 

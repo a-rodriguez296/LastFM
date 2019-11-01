@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are no results at the moment." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94i-Xz-5F5">
+                    <rect key="frame" x="42" y="323" width="291.5" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="291.5" id="SaS-4n-rCN"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please use the search bar to refine your search." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PxX-ci-sGA">
+                    <rect key="frame" x="41.5" y="359" width="291.5" height="36"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="94i-Xz-5F5" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="OJM-Le-Von"/>
+                <constraint firstItem="PxX-ci-sGA" firstAttribute="width" secondItem="94i-Xz-5F5" secondAttribute="width" id="Ycp-cs-ToO"/>
+                <constraint firstItem="94i-Xz-5F5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="guO-Ub-6De"/>
+                <constraint firstItem="PxX-ci-sGA" firstAttribute="top" secondItem="94i-Xz-5F5" secondAttribute="bottom" constant="15" id="kr1-Eb-8v9"/>
+                <constraint firstItem="PxX-ci-sGA" firstAttribute="centerX" secondItem="94i-Xz-5F5" secondAttribute="centerX" id="nlw-me-SxW"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+</document>
