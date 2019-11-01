@@ -11,6 +11,7 @@ import Foundation
 class MainPresenter: MainPresenterProtocol {
     
     let secondsBetweenKeystrokes = 0.8
+    let repository: MainRepositoryProtocol
     
     weak var view: MainViewProtocol?
     var timer: Timer?
@@ -22,6 +23,7 @@ class MainPresenter: MainPresenterProtocol {
     required init(with delegate: MainViewProtocol) {
         view = delegate
         seconds = secondsBetweenKeystrokes
+        repository = MainRepository()
     }
     
     func performSearch(with text: String) {
@@ -61,10 +63,18 @@ class MainPresenter: MainPresenterProtocol {
         
         if seconds < 0.00 {
             stopTimer()
-            print("hacer el llamado con la palabra: \(keyword ?? "")")
-            
+            print("Create a request with the keyword: \(keyword ?? "")")
+            if let unwrappedKeyword = keyword {
+                executeRequest(with: unwrappedKeyword)
+            }
         } else {
             seconds -= 0.1
+        }
+    }
+    
+    func executeRequest(with keyword: String) {
+        repository.searchArtistsTracksAlbums(with: keyword) { (artistsArray, albumsArray, tracksArray) in
+            print("hola")
         }
     }
 }
