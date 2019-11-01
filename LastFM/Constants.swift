@@ -16,6 +16,9 @@ struct Constants {
         static let formatKey = "format"
         static let formatValue = "json"
         
+        static let limitKey = "limit"
+        static let limitValue = "20"
+        
         struct Album {
             static let methodValue = "album.search"
             static let albumKey = "album"

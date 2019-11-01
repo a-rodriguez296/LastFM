@@ -39,14 +39,17 @@ extension SearchService: URLRequestConvertible {
         case .album(let keyword):
             return [Constants.SearchService.methodKey: Constants.SearchService.Album.methodValue,
                     Constants.SearchService.formatKey: Constants.SearchService.formatValue,
+                    Constants.SearchService.limitKey: Constants.SearchService.limitValue,
                     Constants.SearchService.Album.albumKey: keyword]
         case .artist(let keyword):
             return [Constants.SearchService.methodKey: Constants.SearchService.Artist.methodValue,
                     Constants.SearchService.formatKey: Constants.SearchService.formatValue,
+                    Constants.SearchService.limitKey: Constants.SearchService.limitValue,
                     Constants.SearchService.Artist.artistKey: keyword]
         case .track(let keyword):
             return [Constants.SearchService.methodKey: Constants.SearchService.Track.methodValue,
                     Constants.SearchService.formatKey: Constants.SearchService.formatValue,
+                    Constants.SearchService.limitKey: Constants.SearchService.limitValue,
                     Constants.SearchService.Track.trackKey: keyword]
         }
     }
