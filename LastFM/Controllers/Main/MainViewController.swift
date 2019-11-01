@@ -44,16 +44,38 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        guard let unwrappedPresenter = presenter,
+            let enumSection = MainListSection(rawValue: section) else { return 0 }
+        return unwrappedPresenter.numberOfRows(per: enumSection)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.backgroundColor = .red
+        var cell : UITableViewCell!
+        cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
+        if cell == nil {
+            cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
+        }
+        
+        if let unwrappedPresenter = presenter, let enumSection = MainListSection(rawValue: indexPath.section)  {
+            let text = unwrappedPresenter.nameOfElement(at: enumSection, at: indexPath.row)
+            cell.textLabel?.text = text
+        }
+        
         return cell
     }
-    
+}
+
+extension MainViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let unwrappedPresenter = presenter,
+            let enumSection = MainListSection(rawValue: section) else { return "" }
+        return unwrappedPresenter.title(at: enumSection)
+    }
 }
 
 extension MainViewController: UISearchResultsUpdating  {
@@ -69,6 +91,8 @@ extension MainViewController: UISearchResultsUpdating  {
 }
 
 extension MainViewController: MainViewProtocol {
-    
+    func updateList() {
+        tableView.reloadData()
+    }
 }
 

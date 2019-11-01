@@ -85,6 +85,8 @@ class MainPresenter: MainPresenterProtocol {
             unwrappedSelf.artistsArray = unwrappedArtistsArray
             unwrappedSelf.albumsArray = unwrappedAlbumsArray
             unwrappedSelf.tracksArray = unwrappedTracksArray
+            
+            unwrappedSelf.view?.updateList()
         }
     }
     
@@ -96,6 +98,17 @@ class MainPresenter: MainPresenterProtocol {
             return artistsArray.count
         case .track:
             return tracksArray.count
+        }
+    }
+    
+    func title(at section: MainListSection) -> String {
+        switch section {
+        case .album:
+            return "Albums"
+        case .artist:
+            return "Artists"
+        case .track:
+            return "Tracks"
         }
     }
     

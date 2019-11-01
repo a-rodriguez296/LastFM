@@ -13,7 +13,7 @@ enum MainListSection: Int {
 }
 
 protocol MainViewProtocol: class {
-    
+    func updateList()
 }
 
 protocol MainPresenterProtocol: class {
@@ -22,6 +22,7 @@ protocol MainPresenterProtocol: class {
     func performSearch(with text: String)
     func numberOfRows(per section: MainListSection) -> Int
     func nameOfElement(at section: MainListSection, at row: Int) -> String
+    func title(at section: MainListSection) -> String
 }
 
 protocol MainRepositoryProtocol {
