@@ -38,7 +38,7 @@ class MainViewController: UIViewController {
         
         let backgroundView = Bundle.main.loadNibNamed("ListBackgroundTableView", owner: self, options: nil)?.first as! UIView
         tableView.backgroundView = backgroundView
-        
+        tableView.register(UINib.init(nibName: "MainListHeaderViewTableViewCell", bundle: nil), forCellReuseIdentifier: "Header")
     }
 }
 
@@ -74,10 +74,22 @@ extension MainViewController: UITableViewDataSource {
 }
 
 extension MainViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard let unwrappedPresenter = presenter,
-            let enumSection = MainListSection(rawValue: section) else { return "" }
-        return unwrappedPresenter.title(at: enumSection)
+    
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 80.0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        if let header = tableView.dequeueReusableCell(withIdentifier: "Header") as? MainListHeaderViewTableViewCell,
+            let enumSection = MainListSection(rawValue: section),
+            let text = presenter?.title(at: enumSection) {
+                header.setTitle(with: text)
+                return header.contentView
+        } else {
+            return nil
+        }
     }
 }
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		350B78B6236E22D300F1B5B4 /* MainListHeaderViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350B78B4236E22D300F1B5B4 /* MainListHeaderViewTableViewCell.swift */; };
+		350B78B7236E22D300F1B5B4 /* MainListHeaderViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 350B78B5236E22D300F1B5B4 /* MainListHeaderViewTableViewCell.xib */; };
 		351088E5236BC1BE009B6AAA /* MainContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351088E4236BC1BE009B6AAA /* MainContract.swift */; };
 		351088E7236BC262009B6AAA /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351088E6236BC262009B6AAA /* MainPresenter.swift */; };
 		351088E9236BE24F009B6AAA /* MainRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351088E8236BE24F009B6AAA /* MainRepository.swift */; };
@@ -46,6 +48,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		350B78B4236E22D300F1B5B4 /* MainListHeaderViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListHeaderViewTableViewCell.swift; sourceTree = "<group>"; };
+		350B78B5236E22D300F1B5B4 /* MainListHeaderViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainListHeaderViewTableViewCell.xib; sourceTree = "<group>"; };
 		351088E4236BC1BE009B6AAA /* MainContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContract.swift; sourceTree = "<group>"; };
 		351088E6236BC262009B6AAA /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		351088E8236BE24F009B6AAA /* MainRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRepository.swift; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 				358A6980236A8F5A00289E4B /* ListBackgroundTableView.xib */,
 				351088E6236BC262009B6AAA /* MainPresenter.swift */,
 				351088E8236BE24F009B6AAA /* MainRepository.swift */,
+				350B78B4236E22D300F1B5B4 /* MainListHeaderViewTableViewCell.swift */,
+				350B78B5236E22D300F1B5B4 /* MainListHeaderViewTableViewCell.xib */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -320,6 +326,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				350B78B7236E22D300F1B5B4 /* MainListHeaderViewTableViewCell.xib in Resources */,
 				35DBC1822368C33800FE3D9B /* LaunchScreen.storyboard in Resources */,
 				35DBC17F2368C33800FE3D9B /* Assets.xcassets in Resources */,
 				35DBC17D2368C33800FE3D9B /* Main.storyboard in Resources */,
@@ -398,6 +405,7 @@
 				355DDD172368EEA7004256D8 /* AlbumsSearchResults.swift in Sources */,
 				35DBC17A2368C33800FE3D9B /* MainViewController.swift in Sources */,
 				35FEE32523692FBC00CB561C /* ArtistsSearchResult.swift in Sources */,
+				350B78B6236E22D300F1B5B4 /* MainListHeaderViewTableViewCell.swift in Sources */,
 				35FEE32E236936AC00CB561C /* TrackSearchResults.swift in Sources */,
 				35A2685B236A1D4B003575E0 /* TrackSearchOperation.swift in Sources */,
 				35A26859236A1C79003575E0 /* ArtistSearchOperation.swift in Sources */,
