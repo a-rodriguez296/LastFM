@@ -45,7 +45,10 @@ class MainViewController: UIViewController {
 extension MainViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        guard let unwrappedPresenter = presenter else {
+            return 0
+        }
+        return unwrappedPresenter.numberOfSections()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -85,8 +88,9 @@ extension MainViewController: UISearchResultsUpdating  {
         //Make sure we don't query empty texts from the serverndro
         if text != "" {
             presenter?.performSearch(with: text)
+        } else {
+            presenter?.emptyTextInSearchBar()
         }
-        
     }
 }
 

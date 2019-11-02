@@ -122,4 +122,16 @@ class MainPresenter: MainPresenterProtocol {
             return tracksArray[row].name
         }
     }
+    
+    func emptyTextInSearchBar() {
+        keyword = nil
+        artistsArray.removeAll()
+        albumsArray.removeAll()
+        tracksArray.removeAll()
+        view?.updateList()
+    }
+    
+    func numberOfSections() -> Int {
+        return keyword == nil ? 0 : 3
+    }
 }

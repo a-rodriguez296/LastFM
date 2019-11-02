@@ -23,6 +23,8 @@ protocol MainPresenterProtocol: class {
     func numberOfRows(per section: MainListSection) -> Int
     func nameOfElement(at section: MainListSection, at row: Int) -> String
     func title(at section: MainListSection) -> String
+    func emptyTextInSearchBar()
+    func numberOfSections() -> Int
 }
 
 protocol MainRepositoryProtocol {
