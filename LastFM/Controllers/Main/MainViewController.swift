@@ -13,6 +13,9 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    let headerReusableName = "Header"
+    let footerReusableName = "Footer"
+    
     // MARK: - Variables
     var presenter: MainPresenterProtocol?
     var searchController = UISearchController(searchResultsController: nil)
@@ -25,6 +28,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchController()
+        setupTableView()
     }
     
     func setupSearchController() {
@@ -34,11 +38,13 @@ class MainViewController: UIViewController {
         navigationItem.hidesSearchBarWhenScrolling = false
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
-        
-        
+    }
+    
+    func setupTableView() {
         let backgroundView = Bundle.main.loadNibNamed("ListBackgroundTableView", owner: self, options: nil)?.first as! UIView
         tableView.backgroundView = backgroundView
-        tableView.register(UINib.init(nibName: "MainListHeaderViewTableViewCell", bundle: nil), forCellReuseIdentifier: "Header")
+        tableView.register(UINib.init(nibName: "MainListHeaderViewTableViewCell", bundle: nil), forCellReuseIdentifier: headerReusableName)
+        tableView.register(UINib.init(nibName: "MainListFooterViewTableViewCell", bundle: nil), forCellReuseIdentifier: footerReusableName)
     }
 }
 
@@ -74,19 +80,32 @@ extension MainViewController: UITableViewDataSource {
 }
 
 extension MainViewController: UITableViewDelegate {
-    
-    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 80.0
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        if let header = tableView.dequeueReusableCell(withIdentifier: "Header") as? MainListHeaderViewTableViewCell,
+        if let header = tableView.dequeueReusableCell(withIdentifier: headerReusableName) as? MainListHeaderViewTableViewCell,
             let enumSection = MainListSection(rawValue: section),
             let text = presenter?.title(at: enumSection) {
-                header.setTitle(with: text)
-                return header.contentView
+            header.setTitle(with: text)
+            return header.contentView
+        } else {
+            return nil
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 100.0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        if let footer = tableView.dequeueReusableCell(withIdentifier: footerReusableName) as? MainListFooterViewTableViewCell,
+            let enumSection = MainListSection(rawValue: section) {
+            footer.section = enumSection
+            footer.view = self
+            return footer.contentView
         } else {
             return nil
         }
@@ -109,6 +128,10 @@ extension MainViewController: UISearchResultsUpdating  {
 extension MainViewController: MainViewProtocol {
     func updateList() {
         tableView.reloadData()
+    }
+    
+    func didPressEntireList(with section: MainListSection) {
+        print(section)
     }
 }
 

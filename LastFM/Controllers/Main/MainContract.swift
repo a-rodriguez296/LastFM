@@ -14,6 +14,7 @@ enum MainListSection: Int {
 
 protocol MainViewProtocol: class {
     func updateList()
+    func didPressEntireList(with section: MainListSection)
 }
 
 protocol MainPresenterProtocol: class {
@@ -30,3 +31,4 @@ protocol MainPresenterProtocol: class {
 protocol MainRepositoryProtocol {
     func searchArtistsTracksAlbums(with keyword: String, onSuccess: @escaping ([Artist]?, [Album]?, [Track]?) -> ())
 }
+
