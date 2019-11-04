@@ -16,15 +16,20 @@ class ListPresenter: ListPresenterProtocol {
     var elementsArray: [Element] = [Element]()
     var areThereMoreElements = true
     var currentPage = 1
+    var keyword: String?
+    var elementMode: MainListSection?
+    
     
     required init(with delegate: ListViewProtocol, repository: ListRepositoryProtocol) {
         view = delegate
         self.repository = repository
     }
     
-    func performSearch(with text: String) {
+    func performSearch() {
         if areThereMoreElements {
-            repository.searchElements(with: text, page: "\(currentPage)", elementMode: ElementMode.Track) {[weak self] array in
+            guard let text = keyword, let mode = elementMode else { return }
+            
+            repository.searchElements(with: text, page: "\(currentPage)", elementMode: mode) {[weak self] array in
                 guard let unwrappedSelf = self,
                     let unwrappedArray = array
                     else { return }
@@ -47,7 +52,7 @@ class ListPresenter: ListPresenterProtocol {
         return elementsArray.count
     }
     
-    func fetchNextPage(with text: String) {
-        performSearch(with: text)
+    func fetchNextPage() {
+        performSearch()
     }
 }

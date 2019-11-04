@@ -16,6 +16,7 @@ class ListViewController: UIViewController {
     
     // MARK: - Variables
     var presenter: ListPresenterProtocol?
+    var section: MainListSection?
     var keyword: String?
     
     required init?(coder aDecoder: NSCoder) {
@@ -31,10 +32,11 @@ class ListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        //Watch out. This needs to be changed
-        keyword = "Justin"
-        presenter?.performSearch(with: keyword!)
+        guard let unwrappedKeyword = keyword, let unwrappedSection = section else { return }
+        navigationItem.title = "Results for \(unwrappedKeyword)"
+        presenter?.keyword = unwrappedKeyword
+        presenter?.elementMode = unwrappedSection
+        presenter?.performSearch()
     }
 }
 
@@ -67,7 +69,7 @@ extension ListViewController: UITableViewDelegate {
         let currentPosition = scrollView.contentOffset.y 
         
         if currentPosition / maxPosition > CGFloat(scrollPercentageBeforeLoadNext)  {
-            presenter?.fetchNextPage(with: "Justin")
+            presenter?.fetchNextPage()
         }
 
     }

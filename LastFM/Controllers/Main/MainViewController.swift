@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     
     let headerReusableName = "Header"
     let footerReusableName = "Footer"
+    let showListSegueIdentifier = "showList"
     
     // MARK: - Variables
     var presenter: MainPresenterProtocol?
@@ -45,6 +46,16 @@ class MainViewController: UIViewController {
         tableView.backgroundView = backgroundView
         tableView.register(UINib.init(nibName: "MainListHeaderViewTableViewCell", bundle: nil), forCellReuseIdentifier: headerReusableName)
         tableView.register(UINib.init(nibName: "MainListFooterViewTableViewCell", bundle: nil), forCellReuseIdentifier: footerReusableName)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == showListSegueIdentifier {
+            guard let destinationVC = segue.destination as? ListViewController,
+            let section = sender as? MainListSection
+                else { return }
+            destinationVC.keyword = searchController.searchBar.text
+            destinationVC.section = section
+        }
     }
 }
 
@@ -129,7 +140,7 @@ extension MainViewController: MainViewProtocol {
     }
     
     func didPressEntireList(with section: MainListSection) {
-        print(section)
+        performSegue(withIdentifier: showListSegueIdentifier, sender: section)
     }
 }
 

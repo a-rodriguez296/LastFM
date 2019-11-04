@@ -20,13 +20,16 @@ protocol ListViewProtocol: class {
 
 protocol ListPresenterProtocol: class {
     
+    var keyword: String? { get set }
+    var elementMode: MainListSection? { get set }
+    
     init(with delegate: ListViewProtocol, repository: ListRepositoryProtocol)
-    func performSearch(with text: String)
+    func performSearch()
     func nameOfElement(at row: Int) -> String
     func numberOfRows() -> Int
-    func fetchNextPage(with text: String)
+    func fetchNextPage()
 }
 
 protocol ListRepositoryProtocol {
-    func searchElements(with keyword: String, page: String, elementMode: ElementMode, onSuccess: @escaping ([Element]?) -> ())
+    func searchElements(with keyword: String, page: String, elementMode: MainListSection, onSuccess: @escaping ([Element]?) -> ())
 }

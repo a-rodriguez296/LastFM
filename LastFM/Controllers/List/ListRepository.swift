@@ -17,7 +17,7 @@ class ListRepository: ListRepositoryProtocol {
         queue.maxConcurrentOperationCount = 1
     }
     
-    func searchElements(with keyword: String, page: String, elementMode: ElementMode, onSuccess: @escaping ([Element]?) -> ()) {
+    func searchElements(with keyword: String, page: String, elementMode: MainListSection, onSuccess: @escaping ([Element]?) -> ()) {
         
         //Here the catch is to do the fetch once. Therefore, we check if the queue has running operations. If so, don't do anything, else, fetch the next page.
         if queue.operationCount == 0 {
@@ -33,14 +33,14 @@ class ListRepository: ListRepositoryProtocol {
         }
     }
     
-    private func createOperation(with keyword: String, page: String, mode: ElementMode) -> AsyncOperation {
+    private func createOperation(with keyword: String, page: String, mode: MainListSection) -> AsyncOperation {
         
         switch mode {
-        case .Album:
+        case .album:
             return AlbumsSearchOperation(with: keyword, page: page)
-        case .Artist:
+        case .artist:
             return ArtistSearchOperation(with: keyword, page: page)
-        case .Track:
+        case .track:
             return TrackSearchOperation(with: keyword, page: page)
 
         }
