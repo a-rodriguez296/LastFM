@@ -14,9 +14,10 @@ protocol ListViewProtocol: class {
 
 protocol ListPresenterProtocol: class {
     
-    init(with delegate: ListViewProtocol)
+    init(with delegate: ListViewProtocol, repository: ListRepositoryProtocol)
     func performSearch(with text: String)
     func nameOfElement(at row: Int) -> String
+    func numberOfRows() -> Int
 }
 
 protocol ListRepositoryProtocol {
