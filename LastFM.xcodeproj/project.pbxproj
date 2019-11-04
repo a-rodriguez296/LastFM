@@ -11,6 +11,7 @@
 		350B78B7236E22D300F1B5B4 /* MainListHeaderViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 350B78B5236E22D300F1B5B4 /* MainListHeaderViewTableViewCell.xib */; };
 		350B78BC236E270B00F1B5B4 /* MainListFooterViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350B78BA236E270B00F1B5B4 /* MainListFooterViewTableViewCell.swift */; };
 		350B78BD236E270B00F1B5B4 /* MainListFooterViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 350B78BB236E270B00F1B5B4 /* MainListFooterViewTableViewCell.xib */; };
+		350B78C0236FD52B00F1B5B4 /* ListContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350B78BF236FD52B00F1B5B4 /* ListContract.swift */; };
 		351088E5236BC1BE009B6AAA /* MainContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351088E4236BC1BE009B6AAA /* MainContract.swift */; };
 		351088E7236BC262009B6AAA /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351088E6236BC262009B6AAA /* MainPresenter.swift */; };
 		351088E9236BE24F009B6AAA /* MainRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351088E8236BE24F009B6AAA /* MainRepository.swift */; };
@@ -54,6 +55,7 @@
 		350B78B5236E22D300F1B5B4 /* MainListHeaderViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainListHeaderViewTableViewCell.xib; sourceTree = "<group>"; };
 		350B78BA236E270B00F1B5B4 /* MainListFooterViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListFooterViewTableViewCell.swift; sourceTree = "<group>"; };
 		350B78BB236E270B00F1B5B4 /* MainListFooterViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainListFooterViewTableViewCell.xib; sourceTree = "<group>"; };
+		350B78BF236FD52B00F1B5B4 /* ListContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContract.swift; sourceTree = "<group>"; };
 		351088E4236BC1BE009B6AAA /* MainContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContract.swift; sourceTree = "<group>"; };
 		351088E6236BC262009B6AAA /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		351088E8236BE24F009B6AAA /* MainRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRepository.swift; sourceTree = "<group>"; };
@@ -136,6 +138,14 @@
 			path = Footer;
 			sourceTree = "<group>";
 		};
+		350B78C1236FD53700F1B5B4 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				350B78BF236FD52B00F1B5B4 /* ListContract.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
 		3537768C23692AE2005EC728 /* Artist Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				358A697F236A8F3700289E4B /* Main */,
+				350B78C1236FD53700F1B5B4 /* List */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -429,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				350B78BC236E270B00F1B5B4 /* MainListFooterViewTableViewCell.swift in Sources */,
+				350B78C0236FD52B00F1B5B4 /* ListContract.swift in Sources */,
 				3590BA9F2368E26D005E8941 /* Album.swift in Sources */,
 				35DBC19C2368C82600FE3D9B /* SearchService.swift in Sources */,
 				35DBC1932368C64400FE3D9B /* ErrorParser.swift in Sources */,
