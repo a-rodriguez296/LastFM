@@ -14,6 +14,7 @@
 		350B78C0236FD52B00F1B5B4 /* ListContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350B78BF236FD52B00F1B5B4 /* ListContract.swift */; };
 		350B78C3236FD60300F1B5B4 /* ListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350B78C2236FD60300F1B5B4 /* ListRepository.swift */; };
 		350B78C5236FD79800F1B5B4 /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350B78C4236FD79800F1B5B4 /* ListPresenter.swift */; };
+		350B78C7236FD97B00F1B5B4 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350B78C6236FD97B00F1B5B4 /* ListViewController.swift */; };
 		351088E5236BC1BE009B6AAA /* MainContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351088E4236BC1BE009B6AAA /* MainContract.swift */; };
 		351088E7236BC262009B6AAA /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351088E6236BC262009B6AAA /* MainPresenter.swift */; };
 		351088E9236BE24F009B6AAA /* MainRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351088E8236BE24F009B6AAA /* MainRepository.swift */; };
@@ -60,6 +61,7 @@
 		350B78BF236FD52B00F1B5B4 /* ListContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContract.swift; sourceTree = "<group>"; };
 		350B78C2236FD60300F1B5B4 /* ListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepository.swift; sourceTree = "<group>"; };
 		350B78C4236FD79800F1B5B4 /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
+		350B78C6236FD97B00F1B5B4 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		351088E4236BC1BE009B6AAA /* MainContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContract.swift; sourceTree = "<group>"; };
 		351088E6236BC262009B6AAA /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		351088E8236BE24F009B6AAA /* MainRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRepository.swift; sourceTree = "<group>"; };
@@ -146,8 +148,9 @@
 			isa = PBXGroup;
 			children = (
 				350B78BF236FD52B00F1B5B4 /* ListContract.swift */,
-				350B78C2236FD60300F1B5B4 /* ListRepository.swift */,
+				350B78C6236FD97B00F1B5B4 /* ListViewController.swift */,
 				350B78C4236FD79800F1B5B4 /* ListPresenter.swift */,
+				350B78C2236FD60300F1B5B4 /* ListRepository.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				350B78C7236FD97B00F1B5B4 /* ListViewController.swift in Sources */,
 				350B78BC236E270B00F1B5B4 /* MainListFooterViewTableViewCell.swift in Sources */,
 				350B78C0236FD52B00F1B5B4 /* ListContract.swift in Sources */,
 				3590BA9F2368E26D005E8941 /* Album.swift in Sources */,

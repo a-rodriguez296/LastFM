@@ -26,6 +26,7 @@ class ListPresenter: ListPresenterProtocol {
             let unwrappedArray = array
             else { return }
             unwrappedSelf.elementsArray = unwrappedArray
+            unwrappedSelf.view?.updateList()
         }
     }
     
