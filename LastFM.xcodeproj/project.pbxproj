@@ -12,6 +12,7 @@
 		350B78BC236E270B00F1B5B4 /* MainListFooterViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350B78BA236E270B00F1B5B4 /* MainListFooterViewTableViewCell.swift */; };
 		350B78BD236E270B00F1B5B4 /* MainListFooterViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 350B78BB236E270B00F1B5B4 /* MainListFooterViewTableViewCell.xib */; };
 		350B78C0236FD52B00F1B5B4 /* ListContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350B78BF236FD52B00F1B5B4 /* ListContract.swift */; };
+		350B78C3236FD60300F1B5B4 /* ListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350B78C2236FD60300F1B5B4 /* ListRepository.swift */; };
 		351088E5236BC1BE009B6AAA /* MainContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351088E4236BC1BE009B6AAA /* MainContract.swift */; };
 		351088E7236BC262009B6AAA /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351088E6236BC262009B6AAA /* MainPresenter.swift */; };
 		351088E9236BE24F009B6AAA /* MainRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351088E8236BE24F009B6AAA /* MainRepository.swift */; };
@@ -56,6 +57,7 @@
 		350B78BA236E270B00F1B5B4 /* MainListFooterViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListFooterViewTableViewCell.swift; sourceTree = "<group>"; };
 		350B78BB236E270B00F1B5B4 /* MainListFooterViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainListFooterViewTableViewCell.xib; sourceTree = "<group>"; };
 		350B78BF236FD52B00F1B5B4 /* ListContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContract.swift; sourceTree = "<group>"; };
+		350B78C2236FD60300F1B5B4 /* ListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepository.swift; sourceTree = "<group>"; };
 		351088E4236BC1BE009B6AAA /* MainContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContract.swift; sourceTree = "<group>"; };
 		351088E6236BC262009B6AAA /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		351088E8236BE24F009B6AAA /* MainRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRepository.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				350B78BF236FD52B00F1B5B4 /* ListContract.swift */,
+				350B78C2236FD60300F1B5B4 /* ListRepository.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				35FEE32523692FBC00CB561C /* ArtistsSearchResult.swift in Sources */,
 				350B78B6236E22D300F1B5B4 /* MainListHeaderViewTableViewCell.swift in Sources */,
 				35FEE32E236936AC00CB561C /* TrackSearchResults.swift in Sources */,
+				350B78C3236FD60300F1B5B4 /* ListRepository.swift in Sources */,
 				35A2685B236A1D4B003575E0 /* TrackSearchOperation.swift in Sources */,
 				35A26859236A1C79003575E0 /* ArtistSearchOperation.swift in Sources */,
 				35A26857236A18A3003575E0 /* AlbumsSearchOperation.swift in Sources */,
