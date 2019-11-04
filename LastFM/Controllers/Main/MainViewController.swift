@@ -97,18 +97,16 @@ extension MainViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 100.0
+        return 70.0
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        if let footer = tableView.dequeueReusableCell(withIdentifier: footerReusableName) as? MainListFooterViewTableViewCell,
-            let enumSection = MainListSection(rawValue: section) {
-            footer.section = enumSection
-            footer.view = self
-            return footer.contentView
-        } else {
-            return nil
-        }
+        guard let footerView = Bundle.main.loadNibNamed("MainListFooterView", owner: nil, options: nil)?.first as? MainListFooterView,
+         let enumSection = MainListSection(rawValue: section)
+            else { return nil }
+        footerView.view = self
+        footerView.setLabel(with: enumSection)
+        return footerView
     }
 }
 

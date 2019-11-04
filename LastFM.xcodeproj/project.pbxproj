@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		350B78B6236E22D300F1B5B4 /* MainListHeaderViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350B78B4236E22D300F1B5B4 /* MainListHeaderViewTableViewCell.swift */; };
 		350B78B7236E22D300F1B5B4 /* MainListHeaderViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 350B78B5236E22D300F1B5B4 /* MainListHeaderViewTableViewCell.xib */; };
-		350B78BC236E270B00F1B5B4 /* MainListFooterViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350B78BA236E270B00F1B5B4 /* MainListFooterViewTableViewCell.swift */; };
-		350B78BD236E270B00F1B5B4 /* MainListFooterViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 350B78BB236E270B00F1B5B4 /* MainListFooterViewTableViewCell.xib */; };
 		350B78C0236FD52B00F1B5B4 /* ListContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350B78BF236FD52B00F1B5B4 /* ListContract.swift */; };
 		350B78C3236FD60300F1B5B4 /* ListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350B78C2236FD60300F1B5B4 /* ListRepository.swift */; };
 		350B78C5236FD79800F1B5B4 /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350B78C4236FD79800F1B5B4 /* ListPresenter.swift */; };
@@ -29,6 +27,8 @@
 		35A26857236A18A3003575E0 /* AlbumsSearchOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A26856236A18A3003575E0 /* AlbumsSearchOperation.swift */; };
 		35A26859236A1C79003575E0 /* ArtistSearchOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A26858236A1C79003575E0 /* ArtistSearchOperation.swift */; };
 		35A2685B236A1D4B003575E0 /* TrackSearchOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A2685A236A1D4B003575E0 /* TrackSearchOperation.swift */; };
+		35BE6ADB2370B48600DFAED0 /* MainListFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35BE6ADA2370B48600DFAED0 /* MainListFooterView.xib */; };
+		35BE6ADD2370B49000DFAED0 /* MainListFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BE6ADC2370B49000DFAED0 /* MainListFooterView.swift */; };
 		35DBC1782368C33800FE3D9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DBC1772368C33800FE3D9B /* AppDelegate.swift */; };
 		35DBC17A2368C33800FE3D9B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DBC1792368C33800FE3D9B /* MainViewController.swift */; };
 		35DBC17D2368C33800FE3D9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35DBC17B2368C33800FE3D9B /* Main.storyboard */; };
@@ -58,8 +58,6 @@
 /* Begin PBXFileReference section */
 		350B78B4236E22D300F1B5B4 /* MainListHeaderViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListHeaderViewTableViewCell.swift; sourceTree = "<group>"; };
 		350B78B5236E22D300F1B5B4 /* MainListHeaderViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainListHeaderViewTableViewCell.xib; sourceTree = "<group>"; };
-		350B78BA236E270B00F1B5B4 /* MainListFooterViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListFooterViewTableViewCell.swift; sourceTree = "<group>"; };
-		350B78BB236E270B00F1B5B4 /* MainListFooterViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainListFooterViewTableViewCell.xib; sourceTree = "<group>"; };
 		350B78BF236FD52B00F1B5B4 /* ListContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContract.swift; sourceTree = "<group>"; };
 		350B78C2236FD60300F1B5B4 /* ListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepository.swift; sourceTree = "<group>"; };
 		350B78C4236FD79800F1B5B4 /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
@@ -78,6 +76,8 @@
 		35A26856236A18A3003575E0 /* AlbumsSearchOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsSearchOperation.swift; sourceTree = "<group>"; };
 		35A26858236A1C79003575E0 /* ArtistSearchOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchOperation.swift; sourceTree = "<group>"; };
 		35A2685A236A1D4B003575E0 /* TrackSearchOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackSearchOperation.swift; sourceTree = "<group>"; };
+		35BE6ADA2370B48600DFAED0 /* MainListFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainListFooterView.xib; sourceTree = "<group>"; };
+		35BE6ADC2370B49000DFAED0 /* MainListFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListFooterView.swift; sourceTree = "<group>"; };
 		35DBC1742368C33800FE3D9B /* LastFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LastFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35DBC1772368C33800FE3D9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35DBC1792368C33800FE3D9B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -142,8 +142,8 @@
 		350B78BE236E271300F1B5B4 /* Footer */ = {
 			isa = PBXGroup;
 			children = (
-				350B78BA236E270B00F1B5B4 /* MainListFooterViewTableViewCell.swift */,
-				350B78BB236E270B00F1B5B4 /* MainListFooterViewTableViewCell.xib */,
+				35BE6ADA2370B48600DFAED0 /* MainListFooterView.xib */,
+				35BE6ADC2370B49000DFAED0 /* MainListFooterView.swift */,
 			);
 			path = Footer;
 			sourceTree = "<group>";
@@ -382,12 +382,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				350B78BD236E270B00F1B5B4 /* MainListFooterViewTableViewCell.xib in Resources */,
 				350B78B7236E22D300F1B5B4 /* MainListHeaderViewTableViewCell.xib in Resources */,
 				35DBC1822368C33800FE3D9B /* LaunchScreen.storyboard in Resources */,
 				35DBC17F2368C33800FE3D9B /* Assets.xcassets in Resources */,
 				35DBC17D2368C33800FE3D9B /* Main.storyboard in Resources */,
 				358A6981236A8F5A00289E4B /* ListBackgroundTableView.xib in Resources */,
+				35BE6ADB2370B48600DFAED0 /* MainListFooterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,7 +455,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				350B78C7236FD97B00F1B5B4 /* ListViewController.swift in Sources */,
-				350B78BC236E270B00F1B5B4 /* MainListFooterViewTableViewCell.swift in Sources */,
 				350B78C0236FD52B00F1B5B4 /* ListContract.swift in Sources */,
 				3590BA9F2368E26D005E8941 /* Album.swift in Sources */,
 				35DBC19C2368C82600FE3D9B /* SearchService.swift in Sources */,
@@ -484,6 +483,7 @@
 				35EEB7C0237098F800072A47 /* ElementContract.swift in Sources */,
 				35FEE32A2369355100CB561C /* TracksArray.swift in Sources */,
 				35DBC1922368C64400FE3D9B /* Configuration.swift in Sources */,
+				35BE6ADD2370B49000DFAED0 /* MainListFooterView.swift in Sources */,
 				35A26854236A17C6003575E0 /* AsyncOperation.swift in Sources */,
 				351088E5236BC1BE009B6AAA /* MainContract.swift in Sources */,
 				3590BAA22368E39A005E8941 /* AlbumsArray.swift in Sources */,
