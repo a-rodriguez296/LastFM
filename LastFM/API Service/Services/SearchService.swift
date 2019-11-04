@@ -10,9 +10,9 @@ import Foundation
 import Alamofire
 
 enum SearchService: Service {
-    case album(String)
-    case artist(String)
-    case track(String)
+    case album(String, String)
+    case artist(String, String)
+    case track(String, String)
     
 }
 
@@ -36,20 +36,23 @@ extension SearchService: URLRequestConvertible {
     
     var parameters: [String: Any] {
         switch self {
-        case .album(let keyword):
+        case .album(let keyword, let page):
             return [Constants.SearchService.methodKey: Constants.SearchService.Album.methodValue,
                     Constants.SearchService.formatKey: Constants.SearchService.formatValue,
                     Constants.SearchService.limitKey: Constants.SearchService.limitValue,
+                    Constants.SearchService.pageKey: page,
                     Constants.SearchService.Album.albumKey: keyword]
-        case .artist(let keyword):
+        case .artist(let keyword, let page):
             return [Constants.SearchService.methodKey: Constants.SearchService.Artist.methodValue,
                     Constants.SearchService.formatKey: Constants.SearchService.formatValue,
                     Constants.SearchService.limitKey: Constants.SearchService.limitValue,
+                    Constants.SearchService.pageKey: page,
                     Constants.SearchService.Artist.artistKey: keyword]
-        case .track(let keyword):
+        case .track(let keyword, let page):
             return [Constants.SearchService.methodKey: Constants.SearchService.Track.methodValue,
                     Constants.SearchService.formatKey: Constants.SearchService.formatValue,
                     Constants.SearchService.limitKey: Constants.SearchService.limitValue,
+                    Constants.SearchService.pageKey: page,
                     Constants.SearchService.Track.trackKey: keyword]
         }
     }

@@ -11,15 +11,17 @@ import Foundation
 class TrackSearchOperation: AsyncOperation {
     
     let searchKeyword: String
+    let page: String
     var tracks:[Track]?
     
-    init(with keyword: String) {
+    init(with keyword: String, page: String) {
         searchKeyword = keyword
+        self.page = page
     }
     
     override func main() {
         if !isCancelled {
-            AlamofireNetworkLayer.sharedInstance.request(SearchService.track(searchKeyword), onSuccess: {[weak self] (response) in
+            AlamofireNetworkLayer.sharedInstance.request(SearchService.track(searchKeyword, page), onSuccess: {[weak self] (response) in
                 guard let unwrappedSelf = self else { return }
                 
                 do {

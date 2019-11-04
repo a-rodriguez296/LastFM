@@ -21,7 +21,7 @@ class ListRepository: ListRepositoryProtocol {
         
         //Here the catch is to do the fetch once. Therefore, we check if the queue has running operations. If so, don't do anything, else, fetch the next page.
         if queue.operationCount == 0 {
-            let operation = ArtistSearchOperation(with: keyword)
+            let operation = ArtistSearchOperation(with: keyword, page: page)
             queue.addOperation(operation)
             
             operation.completionBlock = {

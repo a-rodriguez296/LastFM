@@ -29,6 +29,6 @@ protocol MainPresenterProtocol: class {
 }
 
 protocol MainRepositoryProtocol {
-    func searchArtistsTracksAlbums(with keyword: String, onSuccess: @escaping ([Artist]?, [Album]?, [Track]?) -> ())
+    func searchArtistsTracksAlbums(with keyword: String, page: String, onSuccess: @escaping ([Artist]?, [Album]?, [Track]?) -> ())
 }
 

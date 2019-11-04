@@ -12,6 +12,7 @@ class MainPresenter: MainPresenterProtocol {
 
     let secondsBetweenKeystrokes = 0.8
     let repository: MainRepositoryProtocol
+    let pageToFetch = 1
     
     weak var view: MainViewProtocol?
     var timer: Timer?
@@ -68,15 +69,15 @@ class MainPresenter: MainPresenterProtocol {
             stopTimer()
             print("Create a request with the keyword: \(keyword ?? "")")
             if let unwrappedKeyword = keyword {
-                executeRequest(with: unwrappedKeyword)
+                executeRequest(with: unwrappedKeyword, page:"\(pageToFetch)")
             }
         } else {
             seconds -= 0.1
         }
     }
     
-    func executeRequest(with keyword: String) {
-        repository.searchArtistsTracksAlbums(with: keyword) {[weak self] (artistsArray, albumsArray, tracksArray) in
+    func executeRequest(with keyword: String, page: String) {
+        repository.searchArtistsTracksAlbums(with: keyword, page: page) {[weak self] (artistsArray, albumsArray, tracksArray) in
             guard let unwrappedSelf = self,
             let unwrappedArtistsArray = artistsArray,
             let unwrappedAlbumsArray = albumsArray,

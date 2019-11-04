@@ -11,15 +11,15 @@ import Foundation
 class MainRepository: MainRepositoryProtocol {
     
     
-    func searchArtistsTracksAlbums(with keyword: String, onSuccess: @escaping ([Artist]?, [Album]?, [Track]?) -> ()) {
+    func searchArtistsTracksAlbums(with keyword: String, page: String, onSuccess: @escaping ([Artist]?, [Album]?, [Track]?) -> ()) {
         
         //Create a queue for the 4 operations. The 4th operation is just a stub operation to know when is it that the others have finished.
         let queue = OperationQueue()
         queue.maxConcurrentOperationCount = 4
         
-        let albumsOperation = AlbumsSearchOperation(with: keyword)
-        let artistOperation = ArtistSearchOperation(with: keyword)
-        let tracksOperation = TrackSearchOperation(with: keyword)
+        let albumsOperation = AlbumsSearchOperation(with: keyword, page: page)
+        let artistOperation = ArtistSearchOperation(with: keyword, page: page)
+        let tracksOperation = TrackSearchOperation(with: keyword, page: page)
         
         let operationsArray = [albumsOperation, artistOperation, tracksOperation]
         

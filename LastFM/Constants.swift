@@ -19,6 +19,8 @@ struct Constants {
         static let limitKey = "limit"
         static let limitValue = "20"
         
+        static let pageKey = "page"
+        
         struct Album {
             static let methodValue = "album.search"
             static let albumKey = "album"

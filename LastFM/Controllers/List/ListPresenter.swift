@@ -15,7 +15,7 @@ class ListPresenter: ListPresenterProtocol {
     weak var view: ListViewProtocol?
     var elementsArray: [Artist] = [Artist]()
     var areThereMoreElements = true
-    var currentPage = 0
+    var currentPage = 1
     
     required init(with delegate: ListViewProtocol, repository: ListRepositoryProtocol) {
         view = delegate
