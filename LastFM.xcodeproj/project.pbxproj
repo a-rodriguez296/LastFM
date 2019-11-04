@@ -43,6 +43,8 @@
 		35DBC1972368C64400FE3D9B /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DBC18F2368C64400FE3D9B /* NetworkResponse.swift */; };
 		35DBC1982368C64400FE3D9B /* HttpStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DBC1902368C64400FE3D9B /* HttpStatusCode.swift */; };
 		35DBC19C2368C82600FE3D9B /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DBC19B2368C82600FE3D9B /* SearchService.swift */; };
+		35EEB7C0237098F800072A47 /* ElementContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EEB7BF237098F700072A47 /* ElementContract.swift */; };
+		35EEB7C223709B9000072A47 /* OperationsContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EEB7C123709B9000072A47 /* OperationsContract.swift */; };
 		35FEE32123692E8500CB561C /* ArtistsArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FEE32023692E8500CB561C /* ArtistsArray.swift */; };
 		35FEE32323692F1800CB561C /* ArtistMatches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FEE32223692F1800CB561C /* ArtistMatches.swift */; };
 		35FEE32523692FBC00CB561C /* ArtistsSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FEE32423692FBC00CB561C /* ArtistsSearchResult.swift */; };
@@ -92,6 +94,8 @@
 		35DBC18F2368C64400FE3D9B /* NetworkResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
 		35DBC1902368C64400FE3D9B /* HttpStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpStatusCode.swift; sourceTree = "<group>"; };
 		35DBC19B2368C82600FE3D9B /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		35EEB7BF237098F700072A47 /* ElementContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementContract.swift; sourceTree = "<group>"; };
+		35EEB7C123709B9000072A47 /* OperationsContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsContract.swift; sourceTree = "<group>"; };
 		35FEE32023692E8500CB561C /* ArtistsArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsArray.swift; sourceTree = "<group>"; };
 		35FEE32223692F1800CB561C /* ArtistMatches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistMatches.swift; sourceTree = "<group>"; };
 		35FEE32423692FBC00CB561C /* ArtistsSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsSearchResult.swift; sourceTree = "<group>"; };
@@ -190,6 +194,7 @@
 		3590BAA02368E385005E8941 /* Response Models */ = {
 			isa = PBXGroup;
 			children = (
+				35EEB7BF237098F700072A47 /* ElementContract.swift */,
 				35F15723236926DE0040CD37 /* Album Search */,
 				3537768C23692AE2005EC728 /* Artist Search */,
 				35FEE328236934B500CB561C /* Track Search */,
@@ -200,6 +205,7 @@
 		35A26855236A183C003575E0 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
+				35EEB7C123709B9000072A47 /* OperationsContract.swift */,
 				35A26853236A17C6003575E0 /* AsyncOperation.swift */,
 				35A26856236A18A3003575E0 /* AlbumsSearchOperation.swift */,
 				35A26858236A1C79003575E0 /* ArtistSearchOperation.swift */,
@@ -471,9 +477,11 @@
 				35DBC1942368C64400FE3D9B /* AccessTokenAdapter.swift in Sources */,
 				351088E9236BE24F009B6AAA /* MainRepository.swift in Sources */,
 				3590BAA42368E5BE005E8941 /* AlbumMatches.swift in Sources */,
+				35EEB7C223709B9000072A47 /* OperationsContract.swift in Sources */,
 				35DBC1972368C64400FE3D9B /* NetworkResponse.swift in Sources */,
 				35DBC1962368C64400FE3D9B /* AlamofireNetwokrLayer.swift in Sources */,
 				35FEE32123692E8500CB561C /* ArtistsArray.swift in Sources */,
+				35EEB7C0237098F800072A47 /* ElementContract.swift in Sources */,
 				35FEE32A2369355100CB561C /* TracksArray.swift in Sources */,
 				35DBC1922368C64400FE3D9B /* Configuration.swift in Sources */,
 				35A26854236A17C6003575E0 /* AsyncOperation.swift in Sources */,

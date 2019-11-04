@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct Artist: Decodable {
+struct Artist: Element, Decodable {
     
-    let name: String
+    var name: String
     
     
     init(with name: String) {

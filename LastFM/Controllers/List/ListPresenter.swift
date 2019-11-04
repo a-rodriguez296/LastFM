@@ -13,7 +13,7 @@ class ListPresenter: ListPresenterProtocol {
     let repository: ListRepositoryProtocol
     
     weak var view: ListViewProtocol?
-    var elementsArray: [Artist] = [Artist]()
+    var elementsArray: [Element] = [Element]()
     var areThereMoreElements = true
     var currentPage = 1
     
@@ -24,7 +24,7 @@ class ListPresenter: ListPresenterProtocol {
     
     func performSearch(with text: String) {
         if areThereMoreElements {
-            repository.searchElements(with: text, page: "\(currentPage)") {[weak self] array in
+            repository.searchElements(with: text, page: "\(currentPage)", elementMode: ElementMode.Track) {[weak self] array in
                 guard let unwrappedSelf = self,
                     let unwrappedArray = array
                     else { return }

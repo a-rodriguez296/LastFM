@@ -11,7 +11,7 @@ import Foundation
 class MainRepository: MainRepositoryProtocol {
     
     
-    func searchArtistsTracksAlbums(with keyword: String, page: String, onSuccess: @escaping ([Artist]?, [Album]?, [Track]?) -> ()) {
+    func searchArtistsTracksAlbums(with keyword: String, page: String, onSuccess: @escaping ([Element]?, [Element]?, [Element]?) -> ()) {
         
         //Create a queue for the 4 operations. The 4th operation is just a stub operation to know when is it that the others have finished.
         let queue = OperationQueue()
@@ -34,7 +34,7 @@ class MainRepository: MainRepositoryProtocol {
         
         completionOperation.completionBlock = {
             DispatchQueue.main.async {
-                onSuccess(artistOperation.artists, albumsOperation.albums, tracksOperation.tracks)
+                onSuccess(artistOperation.results, albumsOperation.results, tracksOperation.results)
             }
         }
     }

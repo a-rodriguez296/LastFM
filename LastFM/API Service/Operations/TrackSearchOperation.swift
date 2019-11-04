@@ -8,11 +8,11 @@
 
 import Foundation
 
-class TrackSearchOperation: AsyncOperation {
+class TrackSearchOperation: AsyncOperation, OperationsProtocol {
     
     let searchKeyword: String
     let page: String
-    var tracks:[Track]?
+    var results:[Element]?
     
     init(with keyword: String, page: String) {
         searchKeyword = keyword
@@ -27,7 +27,7 @@ class TrackSearchOperation: AsyncOperation {
                 do {
                     if !unwrappedSelf.isCancelled {
                         let tracksResponse = try JSONDecoder().decode(TrackSearchResults.self, from: response.body!)
-                        unwrappedSelf.tracks = tracksResponse.getTracks()
+                        unwrappedSelf.results = tracksResponse.getTracks()
                     }
                     
                 } catch {

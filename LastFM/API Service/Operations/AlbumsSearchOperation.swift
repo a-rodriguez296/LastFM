@@ -8,11 +8,11 @@
 
 import Foundation
 
-class AlbumsSearchOperation: AsyncOperation {
+class AlbumsSearchOperation: AsyncOperation, OperationsProtocol {
     
     let searchKeyword: String
     let page: String
-    var albums:[Album]?
+    var results:[Element]?
     
     init(with keyword: String, page: String) {
         searchKeyword = keyword
@@ -26,7 +26,7 @@ class AlbumsSearchOperation: AsyncOperation {
                 do {
                     if !unwrappedSelf.isCancelled {
                         let albumsResponse = try JSONDecoder().decode(AlbumsSearchResults.self, from: response.body!)
-                        unwrappedSelf.albums = albumsResponse.getAlbums()
+                        unwrappedSelf.results = albumsResponse.getAlbums()
                     }
                 } catch {
                     //Error Handling

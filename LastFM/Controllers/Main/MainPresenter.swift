@@ -17,9 +17,9 @@ class MainPresenter: MainPresenterProtocol {
     weak var view: MainViewProtocol?
     var timer: Timer?
     var keyword: String?
-    var artistsArray: [Artist] = [Artist]()
-    var albumsArray: [Album] = [Album]()
-    var tracksArray: [Track] = [Track]()
+    var artistsArray: [Element] = [Element]()
+    var albumsArray: [Element] = [Element]()
+    var tracksArray: [Element] = [Element]()
     
     //This is the time we are going to wait to perform a search
     var seconds: Double

@@ -8,6 +8,12 @@
 
 import Foundation
 
+enum ElementMode {
+    case Album
+    case Artist
+    case Track
+}
+
 protocol ListViewProtocol: class {
     func updateList()
 }
@@ -22,5 +28,5 @@ protocol ListPresenterProtocol: class {
 }
 
 protocol ListRepositoryProtocol {
-    func searchElements(with keyword: String, page: String, onSuccess: @escaping ([Artist]?) -> ())
+    func searchElements(with keyword: String, page: String, elementMode: ElementMode, onSuccess: @escaping ([Element]?) -> ())
 }

@@ -8,10 +8,10 @@
 
 import Foundation
 
-class ArtistSearchOperation: AsyncOperation {
+class ArtistSearchOperation: AsyncOperation, OperationsProtocol {
     
     let searchKeyword: String
-    var artists:[Artist]?
+    var results:[Element]?
     let page: String
     
     init(with keyword: String, page: String) {
@@ -26,7 +26,7 @@ class ArtistSearchOperation: AsyncOperation {
                 do {
                     if !unwrappedSelf.isCancelled {
                         let artistsResponse = try JSONDecoder().decode(ArtistSearchResults.self, from: response.body!)
-                        unwrappedSelf.artists = artistsResponse.getArtists()
+                        unwrappedSelf.results = artistsResponse.getArtists()
                     }
                 } catch {
                     //Error Handling
