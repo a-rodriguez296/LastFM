@@ -17,8 +17,9 @@ class ListRepository: ListRepositoryProtocol {
         queue.maxConcurrentOperationCount = 1
     }
     
-    func searchElements(with keyword: String, onSuccess: @escaping ([Artist]?) -> ()) {
+    func searchElements(with keyword: String, page: String, onSuccess: @escaping ([Artist]?) -> ()) {
         
+        //Here the catch is to do the fetch once. Therefore, we check if the queue has running operations. If so, don't do anything, else, fetch the next page.
         if queue.operationCount == 0 {
             let operation = ArtistSearchOperation(with: keyword)
             queue.addOperation(operation)

@@ -12,6 +12,8 @@ class ListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    let scrollPercentageBeforeLoadNext = 0.85
+    
     // MARK: - Variables
     var presenter: ListPresenterProtocol?
     var keyword: String?
@@ -55,6 +57,19 @@ extension ListViewController: UITableViewDataSource {
         guard let unwrappedPresenter = presenter
         else { return 0 }
         return unwrappedPresenter.numberOfRows()
+    }
+}
+
+extension ListViewController: UITableViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let maxPosition = scrollView.contentInset.top + scrollView.contentSize.height + scrollView.contentInset.bottom - scrollView.bounds.size.height
+        let currentPosition = scrollView.contentOffset.y 
+        
+        if currentPosition / maxPosition > CGFloat(scrollPercentageBeforeLoadNext)  {
+            presenter?.fetchNextPage(with: "Justin")
+        }
+
     }
 }
 

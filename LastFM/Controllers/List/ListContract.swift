@@ -18,8 +18,9 @@ protocol ListPresenterProtocol: class {
     func performSearch(with text: String)
     func nameOfElement(at row: Int) -> String
     func numberOfRows() -> Int
+    func fetchNextPage(with text: String)
 }
 
 protocol ListRepositoryProtocol {
-    func searchElements(with keyword: String, onSuccess: @escaping ([Artist]?) -> ())
+    func searchElements(with keyword: String, page: String, onSuccess: @escaping ([Artist]?) -> ())
 }

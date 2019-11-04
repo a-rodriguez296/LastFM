@@ -14,6 +14,8 @@ class ListPresenter: ListPresenterProtocol {
     
     weak var view: ListViewProtocol?
     var elementsArray: [Artist] = [Artist]()
+    var areThereMoreElements = true
+    var currentPage = 0
     
     required init(with delegate: ListViewProtocol, repository: ListRepositoryProtocol) {
         view = delegate
@@ -21,12 +23,19 @@ class ListPresenter: ListPresenterProtocol {
     }
     
     func performSearch(with text: String) {
-        repository.searchElements(with: text) {[weak self] array in
-            guard let unwrappedSelf = self,
-            let unwrappedArray = array
-            else { return }
-            unwrappedSelf.elementsArray = unwrappedArray
-            unwrappedSelf.view?.updateList()
+        if areThereMoreElements {
+            repository.searchElements(with: text, page: "\(currentPage)") {[weak self] array in
+                guard let unwrappedSelf = self,
+                    let unwrappedArray = array
+                    else { return }
+                if !unwrappedArray.isEmpty {
+                    unwrappedSelf.elementsArray.append(contentsOf: unwrappedArray)
+                    unwrappedSelf.view?.updateList()
+                    unwrappedSelf.currentPage += 1
+                } else {
+                    unwrappedSelf.areThereMoreElements = false
+                }
+            }
         }
     }
     
@@ -36,5 +45,9 @@ class ListPresenter: ListPresenterProtocol {
     
     func numberOfRows() -> Int {
         return elementsArray.count
+    }
+    
+    func fetchNextPage(with text: String) {
+        performSearch(with: text)
     }
 }
