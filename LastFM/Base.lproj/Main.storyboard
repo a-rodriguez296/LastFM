@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,12 +39,53 @@
                     <navigationItem key="navigationItem" id="NFu-f2-vRP"/>
                     <connections>
                         <outlet property="tableView" destination="oWr-vM-oH4" id="0wm-fY-mkz"/>
-                        <segue destination="zM4-96-OyZ" kind="push" identifier="showList" id="HvG-wO-6cK"/>
+                        <segue destination="zM4-96-OyZ" kind="show" identifier="showList" id="HvG-wO-6cK"/>
+                        <segue destination="RjX-hf-xKE" kind="show" identifier="artistDetailSegue" id="Dpz-ut-Da5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="479.19999999999999" y="133.5832083958021"/>
+        </scene>
+        <!--Detail Artist View Controller-->
+        <scene sceneID="nQi-PN-q7e">
+            <objects>
+                <viewController id="RjX-hf-xKE" customClass="DetailArtistViewController" customModule="LastFM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lR3-2M-jfC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X5Z-M9-uhL">
+                                <rect key="frame" x="16" y="104" width="107" height="107"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="107" id="Ny5-Z0-l51"/>
+                                    <constraint firstAttribute="width" secondItem="X5Z-M9-uhL" secondAttribute="height" id="u1R-6l-P03"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RE6-Iw-yeW">
+                                <rect key="frame" x="144" y="145.5" width="52" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="X5Z-M9-uhL" firstAttribute="leading" secondItem="Cm4-KZ-ntX" secondAttribute="leading" constant="16" id="1ih-rf-KuO"/>
+                            <constraint firstItem="RE6-Iw-yeW" firstAttribute="centerY" secondItem="X5Z-M9-uhL" secondAttribute="centerY" id="TtA-RP-jPI"/>
+                            <constraint firstItem="X5Z-M9-uhL" firstAttribute="top" secondItem="Cm4-KZ-ntX" secondAttribute="top" constant="40" id="VFT-Qo-fol"/>
+                            <constraint firstItem="RE6-Iw-yeW" firstAttribute="leading" secondItem="X5Z-M9-uhL" secondAttribute="trailing" constant="21" id="zHA-Dd-ABp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Cm4-KZ-ntX"/>
+                    </view>
+                    <connections>
+                        <outlet property="artistImage" destination="X5Z-M9-uhL" id="Kd7-Bd-e1X"/>
+                        <outlet property="artistNameLabel" destination="RE6-Iw-yeW" id="jnQ-bn-Xdl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="22d-hf-cQn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1456.8" y="909.89505247376314"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="r7L-T0-Ig4">

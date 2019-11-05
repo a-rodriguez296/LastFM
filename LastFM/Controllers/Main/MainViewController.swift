@@ -16,6 +16,7 @@ class MainViewController: UIViewController {
     let headerReusableName = "Header"
     let footerReusableName = "Footer"
     let showListSegueIdentifier = "showList"
+    let showArtistDetailSegueIdentifier = "artistDetailSegue"
     let cellIdentifier = "elementCell"
     
     // MARK: - Variables
@@ -57,6 +58,12 @@ class MainViewController: UIViewController {
                 else { return }
             destinationVC.keyword = searchController.searchBar.text
             destinationVC.section = section
+        }
+        else if segue.identifier == showArtistDetailSegueIdentifier {
+            guard let destinationVC = segue.destination as? DetailArtistViewController,
+            let element = sender as? Artist
+                else { return }
+            destinationVC.artist = element
         }
     }
 }
@@ -118,6 +125,13 @@ extension MainViewController: UITableViewDelegate {
         footerView.setLabel(with: enumSection)
         return footerView
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let unwrappedPresenter = presenter,
+        let section = MainListSection(rawValue: indexPath.section)
+        else { return }
+        unwrappedPresenter.didSelectElement(at: section, row: indexPath.row)
+    }
 }
 
 extension MainViewController: UISearchResultsUpdating  {
@@ -134,6 +148,18 @@ extension MainViewController: UISearchResultsUpdating  {
 }
 
 extension MainViewController: MainViewProtocol {
+    func navigateToArtist(with element: Element) {
+        performSegue(withIdentifier: showArtistDetailSegueIdentifier, sender: element)
+    }
+    
+    func navigateToAlbum(with element: Element) {
+        
+    }
+    
+    func navigateToTrack(with element: Element) {
+        
+    }
+    
     func updateList() {
         tableView.reloadData()
     }

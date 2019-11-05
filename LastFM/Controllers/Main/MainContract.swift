@@ -15,6 +15,9 @@ enum MainListSection: Int {
 protocol MainViewProtocol: class {
     func updateList()
     func didPressEntireList(with section: MainListSection)
+    func navigateToArtist(with element: Element)
+    func navigateToAlbum(with element: Element)
+    func navigateToTrack(with element: Element)
 }
 
 protocol MainPresenterProtocol: class {
@@ -26,6 +29,7 @@ protocol MainPresenterProtocol: class {
     func title(at section: MainListSection) -> String
     func emptyTextInSearchBar()
     func numberOfSections() -> Int
+    func didSelectElement(at section: MainListSection, row: Int)
 }
 
 protocol MainRepositoryProtocol {

@@ -135,4 +135,15 @@ class MainPresenter: MainPresenterProtocol {
     func numberOfSections() -> Int {
         return keyword == nil ? 0 : 3
     }
+    
+    func didSelectElement(at section: MainListSection, row: Int) {
+        switch section {
+        case .album:
+            view?.navigateToAlbum(with: albumsArray[row])
+        case .artist:
+            view?.navigateToArtist(with: artistsArray[row])
+        case .track:
+            view?.navigateToTrack(with: tracksArray[row])
+        }
+    }
 }
