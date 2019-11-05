@@ -113,14 +113,14 @@ class MainPresenter: MainPresenterProtocol {
         }
     }
     
-    func nameOfElement(at section: MainListSection, at row: Int) -> String {
+    func element(at section: MainListSection, at row: Int) -> Element {
         switch section {
         case .album:
-            return albumsArray[row].name
+            return albumsArray[row]
         case .artist:
-            return artistsArray[row].name
+            return artistsArray[row]
         case .track:
-            return tracksArray[row].name
+            return tracksArray[row]
         }
     }
     

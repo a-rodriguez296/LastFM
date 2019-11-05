@@ -16,6 +16,7 @@ class MainViewController: UIViewController {
     let headerReusableName = "Header"
     let footerReusableName = "Footer"
     let showListSegueIdentifier = "showList"
+    let cellIdentifier = "elementCell"
     
     // MARK: - Variables
     var presenter: MainPresenterProtocol?
@@ -46,6 +47,7 @@ class MainViewController: UIViewController {
         tableView.backgroundView = backgroundView
         tableView.register(UINib.init(nibName: "MainListHeaderViewTableViewCell", bundle: nil), forCellReuseIdentifier: headerReusableName)
         tableView.register(UINib.init(nibName: "MainListFooterViewTableViewCell", bundle: nil), forCellReuseIdentifier: footerReusableName)
+        tableView.register(UINib.init(nibName: "ElementTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -75,15 +77,12 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell : UITableViewCell!
-        cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-        if cell == nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
-        }
+       
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ElementTableViewCell
         
         if let unwrappedPresenter = presenter, let enumSection = MainListSection(rawValue: indexPath.section)  {
-            let text = unwrappedPresenter.nameOfElement(at: enumSection, at: indexPath.row)
-            cell.textLabel?.text = text
+            let element = unwrappedPresenter.element(at: enumSection, at: indexPath.row)
+            cell.update(with: element.name, imageStURL: element.getSmallImageURL())
         }
         
         return cell

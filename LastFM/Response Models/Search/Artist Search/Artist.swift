@@ -42,7 +42,7 @@ struct Artist: Element, Decodable {
     }
     
     func getSmallImageURL() -> String? {
-        guard let image = imagesArray.first, image.stURL == "" else { return nil }
+        guard let image = imagesArray.first, image.stURL != "" else { return nil }
         return image.stURL
     }
 }

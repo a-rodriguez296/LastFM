@@ -44,8 +44,8 @@ class ListPresenter: ListPresenterProtocol {
         }
     }
     
-    func nameOfElement(at row: Int) -> String {
-        return elementsArray[row].name
+    func element(at row: Int) -> Element {
+        return elementsArray[row]
     }
     
     func numberOfRows() -> Int {

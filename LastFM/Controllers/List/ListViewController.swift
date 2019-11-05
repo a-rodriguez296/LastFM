@@ -13,6 +13,7 @@ class ListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let scrollPercentageBeforeLoadNext = 0.85
+     let cellIdentifier = "elementCell"
     
     // MARK: - Variables
     var presenter: ListPresenterProtocol?
@@ -28,6 +29,7 @@ class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(UINib.init(nibName: "ElementTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,15 +44,11 @@ class ListViewController: UIViewController {
 
 extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell : UITableViewCell!
-        cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-        if cell == nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
-        }
+       let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ElementTableViewCell
         
         if let unwrappedPresenter = presenter {
-            let text = unwrappedPresenter.nameOfElement(at: indexPath.row)
-            cell.textLabel?.text = text
+            let element = unwrappedPresenter.element(at: indexPath.row)
+            cell.update(with: element.name, imageStURL: element.getSmallImageURL())
         }
         return cell
     }

@@ -22,7 +22,7 @@ protocol MainPresenterProtocol: class {
     init(with delegate: MainViewProtocol)
     func performSearch(with text: String)
     func numberOfRows(per section: MainListSection) -> Int
-    func nameOfElement(at section: MainListSection, at row: Int) -> String
+    func element(at section: MainListSection, at row: Int) -> Element
     func title(at section: MainListSection) -> String
     func emptyTextInSearchBar()
     func numberOfSections() -> Int

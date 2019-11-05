@@ -25,7 +25,7 @@ protocol ListPresenterProtocol: class {
     
     init(with delegate: ListViewProtocol, repository: ListRepositoryProtocol)
     func performSearch()
-    func nameOfElement(at row: Int) -> String
+    func element(at row: Int) -> Element
     func numberOfRows() -> Int
     func fetchNextPage()
 }
