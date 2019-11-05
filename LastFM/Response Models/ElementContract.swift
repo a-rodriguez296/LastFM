@@ -10,4 +10,6 @@ import Foundation
 
 protocol Element {
     var name: String { get set }
+    
+    func getSmallImageURL() -> String?
 }
