@@ -88,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="22d-hf-cQn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1456.8" y="909.89505247376314"/>
+            <point key="canvasLocation" x="2666" y="134"/>
         </scene>
         <!--Detail Album View Controller-->
         <scene sceneID="W3y-7I-RU6">
@@ -138,7 +138,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ozx-dI-1hY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1457" y="1630"/>
+            <point key="canvasLocation" x="2665" y="974"/>
         </scene>
         <!--Detail Track View Controller-->
         <scene sceneID="PqU-AW-W2O">
@@ -196,7 +196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lv8-28-EhN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1457" y="2351"/>
+            <point key="canvasLocation" x="2665" y="-697"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="r7L-T0-Ig4">
@@ -227,6 +227,9 @@
                     <navigationItem key="navigationItem" id="zSB-N8-JWk"/>
                     <connections>
                         <outlet property="tableView" destination="IXv-Bt-QCe" id="aea-a7-I1L"/>
+                        <segue destination="RjX-hf-xKE" kind="show" identifier="artistDetailSegue" id="7cT-ge-zOZ"/>
+                        <segue destination="VQv-IS-rzP" kind="show" identifier="albumDetailSegue" id="gSU-EN-zh5"/>
+                        <segue destination="6B7-Hp-cwH" kind="show" identifier="trackDetailSegue" id="mDa-yM-cmB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i1i-a6-beo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -252,4 +255,9 @@
             <point key="canvasLocation" x="-324" y="134"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="mDa-yM-cmB"/>
+        <segue reference="gSU-EN-zh5"/>
+        <segue reference="7cT-ge-zOZ"/>
+    </inferredMetricsTieBreakers>
 </document>

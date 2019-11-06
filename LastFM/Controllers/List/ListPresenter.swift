@@ -55,4 +55,18 @@ class ListPresenter: ListPresenterProtocol {
     func fetchNextPage() {
         performSearch()
     }
+    
+    func didSelectElement(at row: Int) {
+        guard let mode = elementMode else { return }
+        switch mode {
+        case .album:
+            view?.navigateToAlbum(with: elementsArray[row])
+        case .artist:
+            view?.navigateToArtist(with: elementsArray[row])
+        case .track:
+            view?.navigateToTrack(with: elementsArray[row])
+        }
+        
+        
+    }
 }

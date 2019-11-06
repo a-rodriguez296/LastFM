@@ -16,6 +16,9 @@ enum ElementMode {
 
 protocol ListViewProtocol: class {
     func updateList()
+    func navigateToArtist(with element: Element)
+    func navigateToAlbum(with element: Element)
+    func navigateToTrack(with element: Element)
 }
 
 protocol ListPresenterProtocol: class {
@@ -28,6 +31,7 @@ protocol ListPresenterProtocol: class {
     func element(at row: Int) -> Element
     func numberOfRows() -> Int
     func fetchNextPage()
+    func didSelectElement(at row: Int)
 }
 
 protocol ListRepositoryProtocol {
