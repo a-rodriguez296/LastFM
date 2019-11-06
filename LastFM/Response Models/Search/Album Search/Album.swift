@@ -48,4 +48,9 @@ struct Album: Element, Decodable {
         guard let image = imagesArray.first, image.stURL == "" else { return nil }
         return image.stURL
     }
+    
+    func getBigImageURL() -> String? {
+        let imageElement = imagesArray[2]
+        return imageElement.stURL
+    }
 }

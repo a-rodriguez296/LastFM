@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -41,6 +42,7 @@
                         <outlet property="tableView" destination="oWr-vM-oH4" id="0wm-fY-mkz"/>
                         <segue destination="zM4-96-OyZ" kind="show" identifier="showList" id="HvG-wO-6cK"/>
                         <segue destination="RjX-hf-xKE" kind="show" identifier="artistDetailSegue" id="Dpz-ut-Da5"/>
+                        <segue destination="VQv-IS-rzP" kind="show" identifier="albumDetailSegue" id="X1Q-PZ-LiU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -86,6 +88,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="22d-hf-cQn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1456.8" y="909.89505247376314"/>
+        </scene>
+        <!--Detail Album View Controller-->
+        <scene sceneID="W3y-7I-RU6">
+            <objects>
+                <viewController id="VQv-IS-rzP" customClass="DetailAlbumViewController" customModule="LastFM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ei8-fK-tf9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tv5-Iq-w1u">
+                                <rect key="frame" x="16" y="104" width="107" height="107"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="107" id="Ca9-zo-n1D"/>
+                                    <constraint firstAttribute="width" secondItem="Tv5-Iq-w1u" secondAttribute="height" id="kaU-Al-jxt"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CP2-oz-ncQ">
+                                <rect key="frame" x="144" y="130" width="52" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFa-8L-HZ5">
+                                <rect key="frame" x="144" y="162" width="44" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dFa-8L-HZ5" firstAttribute="top" secondItem="CP2-oz-ncQ" secondAttribute="bottom" constant="8" id="1Ty-LG-SjZ"/>
+                            <constraint firstItem="CP2-oz-ncQ" firstAttribute="leading" secondItem="Tv5-Iq-w1u" secondAttribute="trailing" constant="21" id="Eg9-ld-i4b"/>
+                            <constraint firstItem="dFa-8L-HZ5" firstAttribute="leading" secondItem="CP2-oz-ncQ" secondAttribute="leading" id="UeD-Ib-J8w"/>
+                            <constraint firstItem="Tv5-Iq-w1u" firstAttribute="leading" secondItem="jaU-uK-ofV" secondAttribute="leading" constant="16" id="ZSz-O9-Ba3"/>
+                            <constraint firstItem="Tv5-Iq-w1u" firstAttribute="top" secondItem="jaU-uK-ofV" secondAttribute="top" constant="40" id="hxw-wa-2MX"/>
+                            <constraint firstItem="CP2-oz-ncQ" firstAttribute="centerY" secondItem="Tv5-Iq-w1u" secondAttribute="centerY" multiplier="0.9" id="jj9-cd-Puf"/>
+                            <constraint firstItem="Tv5-Iq-w1u" firstAttribute="width" secondItem="Tv5-Iq-w1u" secondAttribute="height" id="ohg-gz-fbB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jaU-uK-ofV"/>
+                    </view>
+                    <connections>
+                        <outlet property="albumDetailArtistName" destination="dFa-8L-HZ5" id="mT0-s6-9tQ"/>
+                        <outlet property="albumDetailImage" destination="Tv5-Iq-w1u" id="zYI-AN-d7x"/>
+                        <outlet property="albumDetailNameLabel" destination="CP2-oz-ncQ" id="4EE-PI-0eN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ozx-dI-1hY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1457" y="1630"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="r7L-T0-Ig4">

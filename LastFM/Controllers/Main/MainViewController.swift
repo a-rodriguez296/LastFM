@@ -17,6 +17,7 @@ class MainViewController: UIViewController {
     let footerReusableName = "Footer"
     let showListSegueIdentifier = "showList"
     let showArtistDetailSegueIdentifier = "artistDetailSegue"
+    let showAlbumDetailSegueIdentifier = "albumDetailSegue"
     let cellIdentifier = "elementCell"
     
     // MARK: - Variables
@@ -64,6 +65,12 @@ class MainViewController: UIViewController {
             let element = sender as? Artist
                 else { return }
             destinationVC.artist = element
+        }
+        else if segue.identifier == showAlbumDetailSegueIdentifier {
+            guard let destinationVC = segue.destination as? DetailAlbumViewController,
+                let element = sender as? Album
+                else { return }
+            destinationVC.album = element
         }
     }
 }
@@ -153,7 +160,7 @@ extension MainViewController: MainViewProtocol {
     }
     
     func navigateToAlbum(with element: Element) {
-        
+        performSegue(withIdentifier: showAlbumDetailSegueIdentifier, sender: element)
     }
     
     func navigateToTrack(with element: Element) {
