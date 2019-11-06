@@ -18,6 +18,7 @@ class MainViewController: UIViewController {
     let showListSegueIdentifier = "showList"
     let showArtistDetailSegueIdentifier = "artistDetailSegue"
     let showAlbumDetailSegueIdentifier = "albumDetailSegue"
+    let showTrackDetailSegueIdentifier = "trackDetailSegue"
     let cellIdentifier = "elementCell"
     
     // MARK: - Variables
@@ -71,6 +72,11 @@ class MainViewController: UIViewController {
                 let element = sender as? Album
                 else { return }
             destinationVC.album = element
+        } else if segue.identifier == showTrackDetailSegueIdentifier {
+            guard let destinationVC = segue.destination as? DetailTrackViewController,
+                let element = sender as? Track
+                else { return }
+            destinationVC.track = element
         }
     }
 }
@@ -164,7 +170,7 @@ extension MainViewController: MainViewProtocol {
     }
     
     func navigateToTrack(with element: Element) {
-        
+        performSegue(withIdentifier: showTrackDetailSegueIdentifier, sender: element)
     }
     
     func updateList() {

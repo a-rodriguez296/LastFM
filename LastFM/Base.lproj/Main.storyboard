@@ -43,6 +43,7 @@
                         <segue destination="zM4-96-OyZ" kind="show" identifier="showList" id="HvG-wO-6cK"/>
                         <segue destination="RjX-hf-xKE" kind="show" identifier="artistDetailSegue" id="Dpz-ut-Da5"/>
                         <segue destination="VQv-IS-rzP" kind="show" identifier="albumDetailSegue" id="X1Q-PZ-LiU"/>
+                        <segue destination="6B7-Hp-cwH" kind="show" identifier="trackDetailSegue" id="x0h-FQ-zYs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -138,6 +139,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ozx-dI-1hY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1457" y="1630"/>
+        </scene>
+        <!--Detail Track View Controller-->
+        <scene sceneID="PqU-AW-W2O">
+            <objects>
+                <viewController id="6B7-Hp-cwH" customClass="DetailTrackViewController" customModule="LastFM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Yc-FF-k02">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nJs-x8-QDZ">
+                                <rect key="frame" x="16" y="104" width="107" height="107"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nJs-x8-QDZ" secondAttribute="height" multiplier="1:1" id="14U-xO-qEm"/>
+                                    <constraint firstAttribute="width" constant="107" id="GM6-Jt-Zbo"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAj-OT-Nre">
+                                <rect key="frame" x="144" y="114" width="52" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sza-Uy-oPW">
+                                <rect key="frame" x="144" y="144" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECy-Dt-yT1">
+                                <rect key="frame" x="144" y="171" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nJs-x8-QDZ" firstAttribute="leading" secondItem="Usy-Rt-9QV" secondAttribute="leading" constant="16" id="0sU-dQ-FhS"/>
+                            <constraint firstItem="JAj-OT-Nre" firstAttribute="leading" secondItem="nJs-x8-QDZ" secondAttribute="trailing" constant="21" id="Iw6-xV-5cO"/>
+                            <constraint firstItem="nJs-x8-QDZ" firstAttribute="top" secondItem="Usy-Rt-9QV" secondAttribute="top" constant="40" id="Q2c-KH-mU0"/>
+                            <constraint firstItem="sza-Uy-oPW" firstAttribute="leading" secondItem="JAj-OT-Nre" secondAttribute="leading" id="bh9-dr-aI7"/>
+                            <constraint firstItem="sza-Uy-oPW" firstAttribute="top" secondItem="JAj-OT-Nre" secondAttribute="bottom" constant="6" id="jyV-WG-UHE"/>
+                            <constraint firstItem="ECy-Dt-yT1" firstAttribute="top" secondItem="sza-Uy-oPW" secondAttribute="bottom" constant="6" id="mUZ-6j-xQ1"/>
+                            <constraint firstItem="JAj-OT-Nre" firstAttribute="centerY" secondItem="nJs-x8-QDZ" secondAttribute="centerY" multiplier="0.8" id="q5v-RP-Skv"/>
+                            <constraint firstItem="ECy-Dt-yT1" firstAttribute="leading" secondItem="sza-Uy-oPW" secondAttribute="leading" id="xWC-j2-bTM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Usy-Rt-9QV"/>
+                    </view>
+                    <connections>
+                        <outlet property="detailTrackArtistLabel" destination="sza-Uy-oPW" id="Fmc-d7-cbc"/>
+                        <outlet property="detailTrackImageView" destination="nJs-x8-QDZ" id="mGz-iU-fUm"/>
+                        <outlet property="detailTrackListenersLabel" destination="ECy-Dt-yT1" id="Oki-dS-5Lq"/>
+                        <outlet property="detailTrackNameLabel" destination="JAj-OT-Nre" id="bHC-kw-2uK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lv8-28-EhN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1457" y="2351"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="r7L-T0-Ig4">

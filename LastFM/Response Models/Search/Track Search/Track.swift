@@ -13,23 +13,27 @@ struct Track: Element, Decodable {
     var name: String
     let artist: String
     let imagesArray: [ElementImage]
+    let listeners: String
     
-    init(with name: String, artist: String, array: [ElementImage]) {
+    init(with name: String, artist: String, array: [ElementImage], listeners: String) {
         self.name = name
         self.artist = artist
         imagesArray = array
+        self.listeners = listeners
     }
     
     enum TrackCodingKeys: String, CodingKey {
         case name
         case artist
         case imagesArray = "image"
+        case listeners
     }
     
     init(from container: KeyedDecodingContainer<TrackCodingKeys>) throws {
         
         let name = try container.decode(String.self, forKey: .name)
         let artist = try container.decode(String.self, forKey: .artist)
+        let listeners = try container.decode(String.self, forKey: .listeners)
         
         var auxArray = [ElementImage]()
         
@@ -41,11 +45,16 @@ struct Track: Element, Decodable {
             auxArray.append(image)
         }
         
-        self.init(with: name, artist: artist, array: auxArray)
+        self.init(with: name, artist: artist, array: auxArray, listeners: listeners)
     }
     
     func getSmallImageURL() -> String? {
         guard let image = imagesArray.first, image.stURL == "" else { return nil }
         return image.stURL
+    }
+    
+    func getBigImageURL() -> String? {
+        let imageElement = imagesArray[2]
+        return imageElement.stURL
     }
 }
