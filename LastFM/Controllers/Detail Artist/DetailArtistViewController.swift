@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SDWebImage
+import AlamofireImage
 
 class DetailArtistViewController: UIViewController {
 
@@ -36,7 +36,7 @@ extension DetailArtistViewController: DetailArtistViewProtocol {
         artistNameLabel.text = artistName
         navigationItem.title = artistName
         if let stImageURL = artistImageStringURL {
-            artistImage.sd_setImage(with: URL(string: stImageURL), completed: nil)
+            artistImage.af_setImage(withURL: URL.init(string: stImageURL)!)
         } else {
             artistImage.image = UIImage(named: "defaultImage")
         }

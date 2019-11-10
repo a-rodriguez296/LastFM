@@ -97,7 +97,6 @@
 		35A9475B237307ED003D548E /* DetailTrackContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTrackContract.swift; sourceTree = "<group>"; };
 		35A9475E237308C4003D548E /* DetailTrackPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTrackPresenter.swift; sourceTree = "<group>"; };
 		35A9476023730A38003D548E /* DetailTrackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTrackViewController.swift; sourceTree = "<group>"; };
-		35A94762237312DB003D548E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		35B0FAF723728462009F49ED /* DetailAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAlbumViewController.swift; sourceTree = "<group>"; };
 		35B0FAFA23728742009F49ED /* DetailAlbumViewContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAlbumViewContract.swift; sourceTree = "<group>"; };
 		35B0FAFC23728844009F49ED /* DetailAlbumPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAlbumPresenter.swift; sourceTree = "<group>"; };
@@ -321,7 +320,6 @@
 				35DBC1832368C33800FE3D9B /* Info.plist */,
 				359A14302368D48C002E0C2B /* Constants.swift */,
 				3590BAA02368E385005E8941 /* Response Models */,
-				35A94762237312DB003D548E /* README.md */,
 			);
 			path = LastFM;
 			sourceTree = "<group>";
@@ -514,12 +512,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LastFM/Pods-LastFM-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

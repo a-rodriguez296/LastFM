@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SDWebImage
+import AlamofireImage
 
 class ElementTableViewCell: UITableViewCell {
 
@@ -19,7 +19,7 @@ class ElementTableViewCell: UITableViewCell {
     func update(with text: String, imageStURL: String?) {
         elementLabel.text = text
         if imageStURL != nil {
-            elementImageView.sd_setImage(with: URL(string: imageStURL!), completed: nil)
+            elementImageView.af_setImage(withURL: URL(string: imageStURL!)!)
         } else {
             elementImageView.image = UIImage(named: "defaultImage")
         }
@@ -27,6 +27,6 @@ class ElementTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         elementImageView.image = nil
-        elementImageView.sd_cancelCurrentImageLoad()
+        elementImageView.af_cancelImageRequest()
     }
 }

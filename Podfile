@@ -7,5 +7,5 @@ target 'LastFM' do
 
   # Pods for LastFM
 pod 'Alamofire', '~> 4.9.0'
-pod 'SDWebImage'
+pod 'AlamofireImage'
 end

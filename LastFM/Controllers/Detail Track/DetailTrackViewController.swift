@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class DetailTrackViewController: UIViewController {
 
@@ -41,7 +42,7 @@ extension DetailTrackViewController: DetailTrackViewProtocol {
         detailTrackListenersLabel.text = "Number of listeners: \(numberOfListeners)"
         
         if let stImageURL = trackImageStringURL {
-            detailTrackImageView.sd_setImage(with: URL(string: stImageURL), completed: nil)
+            detailTrackImageView.af_setImage(withURL: URL(string: stImageURL)!)
         } else {
             detailTrackImageView.image = UIImage(named: "defaultImage")
         }

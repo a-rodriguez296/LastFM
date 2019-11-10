@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class DetailAlbumViewController: UIViewController {
 
@@ -41,7 +42,7 @@ extension DetailAlbumViewController: DetailAlbumViewProtocol {
         albumDetailNameLabel.text = albumName
         navigationItem.title = albumName
         if let stImageURL = albumImageStringURL {
-            albumDetailImage.sd_setImage(with: URL(string: stImageURL), completed: nil)
+            albumDetailImage.af_setImage(withURL: URL(string: stImageURL)!)
         } else {
             albumDetailImage.image = UIImage(named: "defaultImage")
         }
