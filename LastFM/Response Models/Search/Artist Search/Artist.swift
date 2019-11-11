@@ -48,6 +48,6 @@ struct Artist: Element, Decodable {
     
     func getBigImageURL() -> String? {
         let imageElement = imagesArray[2]
-        return imageElement.stURL
+        return imageElement.stURL.isEmpty ? nil : imageElement.stURL
     }
 }

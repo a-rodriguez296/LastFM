@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NFZ-jy-VCa">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--List View Controller-->
+        <scene sceneID="avo-Fx-2GK">
+            <objects>
+                <viewController id="NFZ-jy-VCa" customClass="ListViewController" customModule="LastFM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lQ3-e9-U9w">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DLO-FP-MSD">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="NFZ-jy-VCa" id="qWa-HN-NTf"/>
+                                    <outlet property="delegate" destination="NFZ-jy-VCa" id="6jp-Dh-Mes"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="f61-t6-xap" firstAttribute="trailing" secondItem="DLO-FP-MSD" secondAttribute="trailing" id="5OV-JI-MX0"/>
+                            <constraint firstItem="f61-t6-xap" firstAttribute="bottom" secondItem="DLO-FP-MSD" secondAttribute="bottom" id="S22-Cu-G1K"/>
+                            <constraint firstItem="DLO-FP-MSD" firstAttribute="top" secondItem="f61-t6-xap" secondAttribute="top" id="ru7-aW-r6j"/>
+                            <constraint firstItem="DLO-FP-MSD" firstAttribute="leading" secondItem="f61-t6-xap" secondAttribute="leading" id="xdV-BG-zZp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="f61-t6-xap"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eh7-Ex-Zvh"/>
+                    <connections>
+                        <outlet property="tableView" destination="DLO-FP-MSD" id="kZ2-a2-hNk"/>
+                        <segue destination="bfc-ee-ton" kind="show" identifier="albumDetailSegue" id="IwU-Zd-q1P"/>
+                        <segue destination="Sir-ha-ADL" kind="show" identifier="artistDetailSegue" id="tYL-UZ-wd7"/>
+                        <segue destination="QCH-UV-VK2" kind="show" identifier="trackDetailSegue" id="v4A-Ju-a5R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0vc-pw-1A8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1718" y="-114"/>
+        </scene>
+        <!--AlbumDetails-->
+        <scene sceneID="t30-AX-2jA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AlbumDetails" id="bfc-ee-ton" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5EW-nh-bfw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2452" y="-270"/>
+        </scene>
+        <!--ArtistDetail-->
+        <scene sceneID="AFu-ax-sf2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ArtistDetail" id="Sir-ha-ADL" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r11-by-la3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2443" y="-146"/>
+        </scene>
+        <!--TrackDetail-->
+        <scene sceneID="DNp-Ci-f57">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TrackDetail" id="QCH-UV-VK2" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iCi-uI-ZAR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2442" y="15"/>
+        </scene>
+    </scenes>
+</document>

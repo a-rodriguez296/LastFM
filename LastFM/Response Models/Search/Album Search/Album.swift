@@ -45,12 +45,12 @@ struct Album: Element, Decodable {
     }
     
     func getSmallImageURL() -> String? {
-        guard let image = imagesArray.first, image.stURL == "" else { return nil }
+        guard let image = imagesArray.first, image.stURL != "" else { return nil }
         return image.stURL
     }
     
     func getBigImageURL() -> String? {
         let imageElement = imagesArray[2]
-        return imageElement.stURL
+        return imageElement.stURL.isEmpty ? nil : imageElement.stURL
     }
 }

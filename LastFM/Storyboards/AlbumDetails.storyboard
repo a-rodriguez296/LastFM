@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="umF-KP-aJz">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Detail Album View Controller-->
+        <scene sceneID="2WU-j9-YTU">
+            <objects>
+                <viewController id="umF-KP-aJz" customClass="DetailAlbumViewController" customModule="LastFM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hvk-On-QUn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GyT-VZ-XJL">
+                                <rect key="frame" x="16" y="60" width="107" height="107"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="107" id="fcX-R5-TNf"/>
+                                    <constraint firstAttribute="width" secondItem="GyT-VZ-XJL" secondAttribute="height" id="zxH-tv-9Ki"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ib-nP-vOg">
+                                <rect key="frame" x="144" y="90.5" width="52" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPA-hR-31j">
+                                <rect key="frame" x="144" y="122.5" width="44" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2Ib-nP-vOg" firstAttribute="centerY" secondItem="GyT-VZ-XJL" secondAttribute="centerY" multiplier="0.9" id="AiX-yE-mOI"/>
+                            <constraint firstItem="KPA-hR-31j" firstAttribute="top" secondItem="2Ib-nP-vOg" secondAttribute="bottom" constant="8" id="KvQ-Yl-kl4"/>
+                            <constraint firstItem="GyT-VZ-XJL" firstAttribute="leading" secondItem="vZb-SR-Bfc" secondAttribute="leading" constant="16" id="QLY-jP-6r8"/>
+                            <constraint firstItem="KPA-hR-31j" firstAttribute="leading" secondItem="2Ib-nP-vOg" secondAttribute="leading" id="a0W-gy-HgR"/>
+                            <constraint firstItem="GyT-VZ-XJL" firstAttribute="top" secondItem="vZb-SR-Bfc" secondAttribute="top" constant="40" id="gnx-fc-tcA"/>
+                            <constraint firstItem="GyT-VZ-XJL" firstAttribute="width" secondItem="GyT-VZ-XJL" secondAttribute="height" id="nk6-N3-FvP"/>
+                            <constraint firstItem="2Ib-nP-vOg" firstAttribute="leading" secondItem="GyT-VZ-XJL" secondAttribute="trailing" constant="21" id="u8P-OY-26j"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vZb-SR-Bfc"/>
+                    </view>
+                    <connections>
+                        <outlet property="albumDetailArtistName" destination="KPA-hR-31j" id="auK-VL-0ID"/>
+                        <outlet property="albumDetailImage" destination="GyT-VZ-XJL" id="FUF-SA-8sx"/>
+                        <outlet property="albumDetailNameLabel" destination="2Ib-nP-vOg" id="Vtq-Iw-dEY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HvQ-Ve-Yet" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2665" y="974"/>
+        </scene>
+    </scenes>
+</document>

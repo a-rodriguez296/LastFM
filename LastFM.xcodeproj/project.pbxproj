@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3504B47E2379FB1300C492A8 /* ArtistDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3504B47D2379FB1300C492A8 /* ArtistDetail.storyboard */; };
+		3504B4812379FC5700C492A8 /* TrackDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3504B4802379FC5700C492A8 /* TrackDetail.storyboard */; };
+		3504B4832379FD3700C492A8 /* AlbumDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3504B4822379FD3700C492A8 /* AlbumDetails.storyboard */; };
+		3504B4852379FF0600C492A8 /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3504B4842379FF0600C492A8 /* List.storyboard */; };
 		350B78B6236E22D300F1B5B4 /* MainListHeaderViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350B78B4236E22D300F1B5B4 /* MainListHeaderViewTableViewCell.swift */; };
 		350B78B7236E22D300F1B5B4 /* MainListHeaderViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 350B78B5236E22D300F1B5B4 /* MainListHeaderViewTableViewCell.xib */; };
 		350B78C0236FD52B00F1B5B4 /* ListContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350B78BF236FD52B00F1B5B4 /* ListContract.swift */; };
@@ -68,6 +72,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3504B47D2379FB1300C492A8 /* ArtistDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ArtistDetail.storyboard; sourceTree = "<group>"; };
+		3504B4802379FC5700C492A8 /* TrackDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TrackDetail.storyboard; sourceTree = "<group>"; };
+		3504B4822379FD3700C492A8 /* AlbumDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlbumDetails.storyboard; sourceTree = "<group>"; };
+		3504B4842379FF0600C492A8 /* List.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
 		350B78B4236E22D300F1B5B4 /* MainListHeaderViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListHeaderViewTableViewCell.swift; sourceTree = "<group>"; };
 		350B78B5236E22D300F1B5B4 /* MainListHeaderViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainListHeaderViewTableViewCell.xib; sourceTree = "<group>"; };
 		350B78BF236FD52B00F1B5B4 /* ListContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContract.swift; sourceTree = "<group>"; };
@@ -144,6 +152,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3504B47F2379FC2900C492A8 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				35DBC17B2368C33800FE3D9B /* Main.storyboard */,
+				3504B4842379FF0600C492A8 /* List.storyboard */,
+				3504B47D2379FB1300C492A8 /* ArtistDetail.storyboard */,
+				3504B4802379FC5700C492A8 /* TrackDetail.storyboard */,
+				3504B4822379FD3700C492A8 /* AlbumDetails.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		350B78B8236E26DA00F1B5B4 /* TableView Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,7 +333,7 @@
 			children = (
 				35DBC1772368C33800FE3D9B /* AppDelegate.swift */,
 				358A697E236A8F2700289E4B /* Controllers */,
-				35DBC17B2368C33800FE3D9B /* Main.storyboard */,
+				3504B47F2379FC2900C492A8 /* Storyboards */,
 				35DBC17E2368C33800FE3D9B /* Assets.xcassets */,
 				35DBC1802368C33800FE3D9B /* LaunchScreen.storyboard */,
 				35DBC1992368C65100FE3D9B /* API Service */,
@@ -458,11 +478,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3504B47E2379FB1300C492A8 /* ArtistDetail.storyboard in Resources */,
 				350B78B7236E22D300F1B5B4 /* MainListHeaderViewTableViewCell.xib in Resources */,
 				35DBC1822368C33800FE3D9B /* LaunchScreen.storyboard in Resources */,
+				3504B4832379FD3700C492A8 /* AlbumDetails.storyboard in Resources */,
+				3504B4812379FC5700C492A8 /* TrackDetail.storyboard in Resources */,
 				35A919C02371303000B4DFAC /* ElementTableViewCell.xib in Resources */,
 				35DBC17F2368C33800FE3D9B /* Assets.xcassets in Resources */,
 				35DBC17D2368C33800FE3D9B /* Main.storyboard in Resources */,
+				3504B4852379FF0600C492A8 /* List.storyboard in Resources */,
 				358A6981236A8F5A00289E4B /* ListBackgroundTableView.xib in Resources */,
 				35BE6ADB2370B48600DFAED0 /* MainListFooterView.xib in Resources */,
 			);

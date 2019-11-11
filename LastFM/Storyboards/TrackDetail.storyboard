@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="puQ-1d-Zog">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Detail Track View Controller-->
+        <scene sceneID="r04-j6-EXO">
+            <objects>
+                <viewController id="puQ-1d-Zog" customClass="DetailTrackViewController" customModule="LastFM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MAe-9B-02o">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TuY-Js-BN3">
+                                <rect key="frame" x="16" y="60" width="107" height="107"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="TuY-Js-BN3" secondAttribute="height" multiplier="1:1" id="Hjv-y6-Zdi"/>
+                                    <constraint firstAttribute="width" constant="107" id="XCf-x4-GWb"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RyW-kT-Cnt">
+                                <rect key="frame" x="144" y="79" width="52" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RL0-DA-RZT">
+                                <rect key="frame" x="144" y="109" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPZ-nY-SdY">
+                                <rect key="frame" x="144" y="136" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EPZ-nY-SdY" firstAttribute="top" secondItem="RL0-DA-RZT" secondAttribute="bottom" constant="6" id="1xT-uP-zP5"/>
+                            <constraint firstItem="RyW-kT-Cnt" firstAttribute="leading" secondItem="TuY-Js-BN3" secondAttribute="trailing" constant="21" id="4dF-Qj-m2d"/>
+                            <constraint firstItem="EPZ-nY-SdY" firstAttribute="leading" secondItem="RL0-DA-RZT" secondAttribute="leading" id="P4x-7Y-Fgw"/>
+                            <constraint firstItem="RL0-DA-RZT" firstAttribute="top" secondItem="RyW-kT-Cnt" secondAttribute="bottom" constant="6" id="Y1u-rT-Lex"/>
+                            <constraint firstItem="TuY-Js-BN3" firstAttribute="top" secondItem="koW-6C-aIm" secondAttribute="top" constant="40" id="YyL-Lg-PFc"/>
+                            <constraint firstItem="RyW-kT-Cnt" firstAttribute="centerY" secondItem="TuY-Js-BN3" secondAttribute="centerY" multiplier="0.8" id="acJ-6l-Ik2"/>
+                            <constraint firstItem="RL0-DA-RZT" firstAttribute="leading" secondItem="RyW-kT-Cnt" secondAttribute="leading" id="hZs-DQ-8VW"/>
+                            <constraint firstItem="TuY-Js-BN3" firstAttribute="leading" secondItem="koW-6C-aIm" secondAttribute="leading" constant="16" id="sqm-Tb-PLv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="koW-6C-aIm"/>
+                    </view>
+                    <connections>
+                        <outlet property="detailTrackArtistLabel" destination="RL0-DA-RZT" id="d1W-PT-ySp"/>
+                        <outlet property="detailTrackImageView" destination="TuY-Js-BN3" id="XKO-mF-GbU"/>
+                        <outlet property="detailTrackListenersLabel" destination="EPZ-nY-SdY" id="KBT-bE-h3d"/>
+                        <outlet property="detailTrackNameLabel" destination="RyW-kT-Cnt" id="cJF-hg-fWb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bD5-lM-e3d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2665" y="-697"/>
+        </scene>
+    </scenes>
+</document>
